@@ -12,7 +12,8 @@
         <!-- Uncomment line below when the booking routes/controller is complete-->
         <li> <%#= link_to 'Book now!', new_listing_booking_path %></li>
         <!-- Edit the listing-->
-        <li> <%= link_to 'Edit', edit_listing_path  %>
+        <li><%= link_to 'See collection dates', listing_collection_dates_path(@listing) %></li>
+        <li> <%= link_to 'Edit', edit_listing_path  %></li>
         <!-- Uncomment review line below when the reviews routes/controller is complete-->
         <li> <%#= link_to 'Leave review', new_listing_review_path(@listing) %>
         <!-- Implement logic at later stage, only owners can delete-->
