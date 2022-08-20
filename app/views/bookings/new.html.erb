@@ -1,8 +1,8 @@
 <div class="container">
-  <h1 class="fs-3 text-center my-4 fw-bold">Book a listing</h1>
-  <p><strong>Date</strong>: <span class="text-primary"><%= @collection_date.date.strftime('%B %e, %Y') %></span></p>
+  <h1>Book a listing</h1>
+  <p>Date: <%= @collection_date.date.strftime('%B %e, %Y') %></p>
   <%= simple_form_for [@listing, @booking] do |f| %>
     <%= f.input :collection_date_id, as: :hidden, input_html: { value: @collection_date.id } %>
-    <%= f.submit 'Confirm Booking', class: "btn btn-primary text-light", id: "submit-button" %>
+    <%= f.submit 'Confirm Booking', class: "btn btn-primary", id: "submit-button" %>
   <% end %>
 </div>
