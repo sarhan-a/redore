@@ -12,6 +12,9 @@
       <ul class="navbar-nav me-auto">
         <% if user_signed_in? %>
           <li class="nav-item active">
+            <%= link_to "Explore", listings_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item active">
             <%= link_to "Home", "#", class: "nav-link" %>
           </li>
           <li class="nav-item">
@@ -27,8 +30,11 @@
           </li>
         <% else %>
           <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+            <li class="nav-item active">
             <%= link_to "Explore", listings_path, class: "nav-link" %>
+            </li>
+            <li>
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
           </li>
         <% end %>
       </ul>
