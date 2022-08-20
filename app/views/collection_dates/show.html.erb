@@ -1,0 +1,8 @@
+<div class="container">
+  <h1 class="fs-3 text-center my-4 fw-bold">Date for <%= link_to @collection_date.listing.title, listing_path(@collection_date.listing), class: "text-primary text-decoration-none" %></h1>
+  <p>Date: <%= @collection_date.date %></p>
+  <h2>Bookings for <%= @collection_date.date %></h2>
+  <% @collection_date.bookings.each do |booking| %>
+    <p><%= link_to 'See booking', listing_booking_path(@collection_date.listing, booking) %></p>
+  <% end %>
+</div>
