@@ -1,0 +1,9 @@
+<h1>Create a Listing</h1>
+
+<%= simple_form_for @listing do |f| %>
+<%= f.input :title %>
+<%= f.input :address %>
+<%= f.input :details %>
+<%= f.input :price %>
+<%= f.submit class: 'btn btn-primary' %>
+<% end %>
