@@ -1,0 +1,6 @@
+<div class="container">
+  <h1 class="fs-3 text-center my-4 fw-bold">Available dates for <%= link_to @listing.title, listing_path(@listing), class: "text-primary text-decoration-none" %></h1>
+  <% @listing.collection_dates.each do |collection_date| %>
+    <p><strong>Date</strong>: <%= collection_date.date.to_date.strftime('%B %e, %Y') %> <%= link_to 'View Date', listing_collection_date_path(@listing, collection_date) %></p>
+  <% end %>
+</div>

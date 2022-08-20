@@ -1,0 +1,5 @@
+<div class="container">
+  <h1 class="fs-3 text-center my-4 fw-bold">Booking for <span class="text-primary"><%= link_to @booking.listing.title, listing_path(@booking.listing), class: "text-decoration-none" %></span></h1>
+  <p><strong>Date</strong>: <%= @booking.collection_date.date.strftime('%B %e, %Y') %></p>
+  <p><strong>Customer</strong>: <%= @booking.user.first_name %> <%= @booking.user.last_name %></p>
+</div>
