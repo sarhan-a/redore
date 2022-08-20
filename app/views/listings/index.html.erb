@@ -1,6 +1,6 @@
-<div>
+<div class= "container">
 <% @listings.each do |listing| %>
-<% link_to listing do %>
+<%= link_to listing do %>
 <%= listing.title %>
 <%= listing.details %>
 <%= listing.address %>
