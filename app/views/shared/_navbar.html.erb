@@ -22,8 +22,8 @@
             <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
               <%= link_to "Action", "#", class: "dropdown-item" %>
               <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <li><%= link_to "Explore", new_listings %></li>
-              <li><a class="nav-link" href="">About us</a></li>
+              <li><%#= link_to "Explore", new_listings %></li>
+              <%# <li><a class="nav-link" href="">About us</a></li> %>
               <% if !user_signed_in? %>
               <li><%= link_to "Sign up", new_user_registration_path %></li>
               <li><%= link_to "Log in", new_user_session_path %></li>
