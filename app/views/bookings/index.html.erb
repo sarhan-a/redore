@@ -1,12 +1,12 @@
 <div class="container">
-  <h1 class="fs-3 text-center my-4 fw-bold">Bookings for <%= link_to @listing.title, listing_path(@listing), class: "text-primary text-decoration-none" %></h1>
+  <h1>Bookings for <%= link_to @listing.title, listing_path(@listing) %></h1>
   <% @listing.collection_dates.each do |collection_date| %>
     <h2><%= collection_date.date.to_date.strftime('%B %e, %Y') %></h2>
     <% if collection_date.bookings.empty? %>
       <p>No bookings for <%= collection_date.date.to_date.strftime('%B %e, %Y') %> yet.</p>
     <% else %>
       <% collection_date.bookings.each do |booking| %>
-        <p><strong>Customer</strong>: <%= booking.user.first_name %> <%= booking.user.last_name %>. <%= link_to 'See Booking', listing_booking_path(@listing, booking) %></p>
+        <p>Customer: <%= booking.user.first_name %> <%= booking.user.last_name %>. <%= link_to 'See Booking', listing_booking_path(@listing, booking) %></p>
       <% end %>
     <% end %>
   <% end %>
