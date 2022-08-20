@@ -19,7 +19,7 @@ class BookingsController < ApplicationController
 
   def index
     @listing = Listing.find(params[:listing_id])
-    @bookings = Booking.all
+    @bookings = @listing.bookings
   end
 
   private
