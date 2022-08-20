@@ -1,0 +1,24 @@
+<div class="container">
+  <h1>Choose <%= @listing.title%></h1><br>
+  <h2> <%= @listing.address %></h2>
+    <p> <%= @listing.details %></p><br>
+    <!-- Uncomment line below when the reviews routes/controller is complete-->
+    <p> <%#= @listing.reviews.rating %>
+    <p> Only <%= @listing.price %>.00 collection fee</p>
+    <div class = "show card links">
+      <ul>
+        <li> <%= link_to 'Choose another', listings_path %></li>
+        <li> <%= link_to 'Back to home', root_path %></li>
+        <!-- Uncomment line below when the booking routes/controller is complete-->
+        <li> <%#= link_to 'Book now!', new_listing_booking_path %></li>
+        <!-- Edit the listing-->
+        <li> <%= link_to 'Edit', edit_listing_path  %>
+        <!-- Uncomment review line below when the reviews routes/controller is complete-->
+        <li> <%#= link_to 'Leave review', new_listing_review_path(@listing) %>
+        <!-- Implement logic at later stage, only owners can delete-->
+        <!-- not functional until listings controller is updated -->
+        <li> <%= link_to 'Delete', listing_path,
+          data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+      </ul>
+    </div>
+</div>

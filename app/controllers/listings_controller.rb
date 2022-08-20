@@ -4,6 +4,11 @@ class ListingsController < ApplicationController
     @listings = Listing.all
   end
 
+
+  def show
+    @listing = Listing.find(params[:id])
+  end
+  
   def new
     @listing = Listing.new
   end
@@ -20,5 +25,5 @@ class ListingsController < ApplicationController
 
   def listing_params
     params.require(:listing).permit(:title, :address, :details, :price)
-  end
+   end
 end
