@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   resources :listings do
     resources :bookings, only: %i[new create show index]
     resources :collection_dates, only: %i[new create show index]
+    resources :reviews, only: %i[new create]
   end
 end
