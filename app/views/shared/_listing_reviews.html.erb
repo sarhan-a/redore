@@ -2,7 +2,7 @@
   <h2>Customer Reviews</h2>
   <% if @listing.reviews.present? %>
     <p>⭐<%= @listing.average_rating.round(2) %> out of 5</p>
-    <h2><%= @listing.reviews.count %> Reviews </h2>
+    <p><strong><%= @listing.reviews.count %> Reviews</strong></p>
       <% @listing.reviews.each do |review| %>
         <div class="card">
           <p>Rating: <%= '⭐' * review.rating%></p>
