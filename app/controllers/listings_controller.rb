@@ -31,6 +31,13 @@ class ListingsController < ApplicationController
     redirect_to listing_path(@listing)
   end
 
+  def destroy
+    @listing = Listing.find(params[:id])
+    @listing.destroy
+
+    redirect_to listings_path, status: :see_other
+  end
+
   private
 
   def listing_params

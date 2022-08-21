@@ -7,4 +7,12 @@ class Listing < ApplicationRecord
 
   validates_presence_of :title, :address, :details, :price
   validates :price, numericality: true
+
+  def average_rating
+    if reviews.size.positive?
+      reviews.average(:rating)
+    else
+      'No ratings yet'
+    end
+  end
 end

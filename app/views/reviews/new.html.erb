@@ -1,0 +1,10 @@
+<div class="container">
+  <h1>Create Review</h1>
+  <%= simple_form_for [@listing, @review] do |f| %>
+    <%= f.label :rating, "Overall rating" %>
+    <br>
+    <%= f.select :rating, options_for_select([("Select"), 1, 2, 3, 4, 5] ) %>
+    <%= f.input :content, label: 'Add a written review', placeholder:"How was your experience?" %>
+    <%= f.submit "Submit review" %>
+  <% end %>
+</div>
