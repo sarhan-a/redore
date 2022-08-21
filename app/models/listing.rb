@@ -9,10 +9,6 @@ class Listing < ApplicationRecord
   validates :price, numericality: true
 
   def average_rating
-    if reviews.size.positive?
-      reviews.average(:rating)
-    else
-      'No ratings yet'
-    end
+    reviews.average(:rating)
   end
 end
