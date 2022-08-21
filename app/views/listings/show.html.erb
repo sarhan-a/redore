@@ -1,5 +1,8 @@
 <div class="container">
   <h1>Choose <%= @listing.title%></h1><br>
+  <% @listing.photos.each do |photo| %>
+  <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill  %>
+  <% end %>
   <h2> <%= @listing.address %></h2>
     <p> <%= @listing.details %></p><br>
     <!-- Uncomment line below when the reviews routes/controller is complete-->
