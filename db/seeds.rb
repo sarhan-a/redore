@@ -22,7 +22,7 @@ puts "> Creating eco-conscious users"
 
   listing = Listing.create(
     title: Faker::Company.name,
-    address: Faker::Address.full_address
+    address: Faker::Address.full_address,
     # address: address.sample, -> only uncomment after setting real UK address above
     details: Faker::Lorem.paragraph(sentence_count: 10),
     price: Faker::Commerce.price,
