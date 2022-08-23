@@ -1,6 +1,0 @@
-<div class="container">
-  <h1>Available dates for <%= link_to @listing.title, listing_path(@listing) %></h1>
-  <% @listing.collection_dates.each do |collection_date| %>
-    <p>Date: <%= collection_date.date.to_date.strftime('%B %e, %Y') %> <%= link_to 'See Bookings', listing_collection_date_path(@listing, collection_date) %> <%= link_to 'Add Booking', new_listing_booking_path(listing_id: @listing.id, collection_date_id: collection_date.id) %></p>
-  <% end %>
-</div>

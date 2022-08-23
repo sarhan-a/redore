@@ -1,5 +1,5 @@
 <div class="container">
   <h1>Booking for <%= link_to @booking.listing.title, listing_path(@booking.listing) %></span></h1>
-  <p>Date: <%= @booking.collection_date.date.strftime('%B %e, %Y') %></p>
+  <p>Date: <%= @booking.collection_date.strftime('%B %e, %Y') %></p>
   <p>Customer: <%= @booking.user.first_name %> <%= @booking.user.last_name %></p>
 </div>

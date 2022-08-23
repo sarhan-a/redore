@@ -1,13 +1,13 @@
 class BookingsController < ApplicationController
   def new
     @listing = Listing.find(params[:listing_id])
-    @collection_date = CollectionDate.find(params[:collection_date_id])
     @booking = @listing.bookings.new(user: current_user)
   end
 
   def create
     @listing = Listing.find(params[:listing_id])
-    @booking = @listing.bookings.new(booking_params)
+    date = Date.strptime(booking_params[:collection_date], '%Y-%m-%d')
+    @booking = Booking.new(listing: @listing, user: current_user, collection_date: date)
     @booking.user = current_user
     @booking.save
     redirect_to listing_booking_path(@listing, @booking)
@@ -25,6 +25,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:collection_date_id)
+    params.require(:booking).permit(:collection_date)
   end
 end
