@@ -8,8 +8,12 @@
 <%= listing.details %>
 <%= listing.address %>
 <%= listing.price %>
+<%= listing.latitude %>
+<%= listing.longitude %>
 <% end %>
 <% end %>
 </div>
 
 <%= link_to "Create Listing", new_listing_path %>
+
+<%= render "shared/map" %>

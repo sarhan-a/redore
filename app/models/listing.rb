@@ -5,6 +5,9 @@ class Listing < ApplicationRecord
   has_many :collection_dates, dependent: :destroy
   has_many :bookings, dependent: :destroy
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   validates_presence_of :title, :address, :details, :price
   validates :price, numericality: true
 
