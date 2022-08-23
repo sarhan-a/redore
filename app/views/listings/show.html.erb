@@ -11,9 +11,8 @@
       <li> <%= link_to 'Choose another', listings_path %></li>
       <li> <%= link_to 'Back to home', root_path %></li>
       <!-- Uncomment line below when the booking routes/controller is complete-->
-      <li> <%#= link_to 'Book now!', new_listing_booking_path %></li>
-      <li><%= link_to 'Add collection dates', new_listing_collection_date_path(@listing) %></li>
-      <li><%= link_to 'See collection dates', listing_collection_dates_path(@listing) %></li>
+      <li> <%= link_to 'Book now!', new_listing_booking_path(@listing) %></li>
+      <li><%= link_to 'Show bookings', listing_bookings_path(@listing) %></li>
       <!-- Edit the listing-->
       <li> <%= link_to 'Edit', edit_listing_path  %></li>
       <li> <%= link_to 'Leave review', new_listing_review_path(@listing) %></li>
