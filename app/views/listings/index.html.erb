@@ -1,17 +1,18 @@
 <div class= "container">
-<% @listings.each do |listing| %>
-<%= link_to listing do %>
-<% listing.photos.each do |photo| %>
-<%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<% end %>
-<%= listing.title %>
-<%= listing.details %>
-<%= listing.address %>
-<%= listing.price %>
-<%= listing.latitude %>
-<%= listing.longitude %>
-<% end %>
-<% end %>
+  <% @listings.each do |listing| %>
+    <%= link_to listing do %>
+      <% listing.photos.each do |photo| %>
+        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+      <% end %>
+      <%= listing.title %>
+      <%= listing.details %>
+      <%= listing.address %>
+      <%= listing.price %>
+      <%= listing.latitude %>
+      <%= listing.longitude %>
+      <br>
+    <% end %>
+  <% end %>
 </div>
 
 <%= link_to "Create Listing", new_listing_path %>
