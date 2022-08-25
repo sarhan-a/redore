@@ -1,20 +1,56 @@
-<div class= "container">
-  <% @listings.each do |listing| %>
-    <%= link_to listing do %>
-      <% listing.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-      <% end %>
-      <%= listing.title %>
-      <%= listing.details %>
-      <%= listing.address %>
-      <%= listing.price %>
-      <%= listing.latitude %>
-      <%= listing.longitude %>
-      <br>
-    <% end %>
-  <% end %>
-</div>
+<section>
+  <div class="container">
+    <div class="section-title pt-3">
+      <h2> We found <%= @listings.count %> recycling business ...</h2>
+      <div class="row">
+        <div class="col-8 d-flex flex-row">
+          <button>Distance</button>
+          <button>Rating</button>
+          <button>Sustainablity</button>
+          <button>Price</button>
+        </div>
+        <div class="col-4 d-flex flex-row-reverse">
+        <button><%= link_to "Create Listing", new_listing_path %></button>
+        </div>
+      </div>
 
-<%= link_to "Create Listing", new_listing_path %>
-
-<%= render "shared/map" %>
+    </div>
+  </div>
+</section>
+<br>
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <% @listings.each do |listing| %>
+        <%= link_to listing do %>
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4 text-center" style="border-style: solid;">
+              <%= listing.photos.each do |photo| %>
+              <%= cl_image_tag photo.key, class:"img-fluid rounded-start", crop: :fit  %>
+              <% end %>
+              <h3>Photo Here</h3>
+            </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h3 class="card-title"><%= listing.title %></h3>
+              <p class="card-details"><%= listing.details %></p>
+              <p class="card-address"><%= listing.address %></p>
+              <p class="card-price">£<%= listing.price %>.00/day</p>
+              <p class="card-rating"><%=listing.average_rating %>⭐ (<%= listing.reviews.count%> reviews )</p>
+            </div>
+          </div>
+          </div>
+        <% end %>
+        </div>
+        <hr>
+        <% end %>
+      </div>
+      <div class="col-4" style="max-width: 100%;">
+      <%= render "shared/map" %>
+      </div>
+    </div>
+  </div>
+  </div>
+</section>
