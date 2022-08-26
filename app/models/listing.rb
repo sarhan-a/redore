@@ -13,4 +13,8 @@ class Listing < ApplicationRecord
   def average_rating
     reviews.average(:rating)
   end
+
+  ransacker :collection_date, type: :date do
+    Arel.sql('date(collection_date)')
+  end
 end
