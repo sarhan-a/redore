@@ -1,0 +1,16 @@
+<%= search_form_for @q do |f| %>
+
+<%= f.label :postcode %>
+<%= f.search_field :address_cont %>
+
+<%= f.label :max_price %>
+<%= f.search_field :price_lteq %>
+
+<%= f.label :min_price %>
+<%= f.search_field :price_gteq %>
+
+<%= f.label :collection_date %>
+<%= f.date_field :bookings_collection_date_not_eq %>
+
+<%= f.submit %>
+<% end %>
