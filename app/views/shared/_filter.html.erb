@@ -1,6 +1,5 @@
 <%= search_form_for @q do |f| %>
-<%= f.label :keyword %>
-<%= f.search_field :details_cont %>
+
 <%= f.label :postcode %>
 <%= f.search_field :address_cont %>
 
@@ -10,11 +9,8 @@
 <%= f.label :min_price %>
 <%= f.search_field :price_gteq %>
 
-<%= f.label :ratings %>
-<%= f.search_field :rating_gteq %>
+<%= f.label :collection_date %>
+<%= f.date_field :bookings_collection_date_not_eq %>
 
 <%= f.submit %>
-
-
-
 <% end %>
