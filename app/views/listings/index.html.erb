@@ -1,15 +1,13 @@
 <div class= "container">
-
-<%= search_form_for @q do |f| %>
-<%= f.label :details_cont %>
-<%= f.search_field :details_cont %>
-<%= f.label :address_cont %>
-<%= f.search_field :address_cont %>
-<%= f.submit %>
-<% end %>
-
-
-
+  <%= search_form_for @q do |f| %>
+    <%= f.label :details_cont %>
+    <%= f.search_field :details_cont %>
+    <%= f.label :address_cont %>
+    <%= f.search_field :address_cont %>
+    <%= f.label :collection_date %>
+    <%= f.date_field :bookings_collection_date_not_eq %>
+    <%= f.submit %>
+  <% end %>
   <% @listings.each do |listing| %>
     <%= link_to listing do %>
       <% listing.photos.each do |photo| %>
