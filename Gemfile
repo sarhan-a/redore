@@ -51,7 +51,7 @@ gem "cloudinary"
 #Geocoder
 gem "geocoder"
 
-gem "ransack"
+gem 'ransack', :github => 'activerecord-hackery/ransack', :branch => 'main'
 
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]

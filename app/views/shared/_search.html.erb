@@ -1,18 +1,14 @@
-<div class="search-button">
-  <form>
-    <div class="inner-form">
-      <div class="input-field first-wrap">
-        <input id="search" type="text" placeholder="Select items" />
-      </div>
-      <div class="input-field first-wrap">
-        <input id="location" type="text" placeholder="Enter Postcode" />
-      </div>
-      <div class="input-field second-wrap">
-        <input id="location" type="date" placeholder="Collection date" />
-      </div>
-      <div class="input-field third-wrap">
-        <button class="btn-search" type="button">Search</button>
-      </div>
-    </div>
-  </form>
-</div>
+<%= search_form_for @q do |f| %>
+
+<%= f.label :enter_your_item %>
+<%= f.search_field :title_or_details_cont %>
+
+<%= f.label :postcode %>
+<%= f.search_field :address_cont %>
+
+
+<%= f.label :collection_date %>
+<%= f.date_field :bookings_collection_date_not_eq %>
+
+<%= f.submit %>
+<% end %>
