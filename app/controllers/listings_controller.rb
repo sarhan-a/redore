@@ -3,7 +3,8 @@ class ListingsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
-    @listings = Listing.all
+    @q = Listing.ransack(params[:q])
+    @listings = @q.result(distinct: true)
     @markers = @listings.geocoded.map do |listing|
       {
         lat: listing.latitude,

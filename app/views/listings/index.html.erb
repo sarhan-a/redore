@@ -1,24 +1,19 @@
-<section>
-  <div class="container">
-    <div class="section-title pt-3">
-      <h2> We found <%= @listings.count %> recycling business ...</h2>
-      <div class="row">
-        <div class="col-8 d-flex flex-row">
-          <button>Distance</button>
-          <button>Rating</button>
-          <button>Sustainablity</button>
-          <button>Price</button>
-        </div>
-        <div class="col-4 d-flex flex-row-reverse">
-        <button><%= link_to "Create Listing", new_listing_path %></button>
-        </div>
+<div class="container">
+  <div class="index-top pt-3">
+    <h2> We found <%= @listings.count %> businesses that can help you ...</h2>
+    <div class="row">
+      <div class="col-8 d-flex flex-row">
+        <button>Rating</button>
+        <button>Sustainablity</button>
+        <button>Price</button>
       </div>
-
+      <div class="col-4 d-flex flex-row-reverse">
+        <button><%= link_to "Create Listing", new_listing_path %></button>
+      </div>
     </div>
   </div>
-</section>
+    <%= render "shared/filter" %>
 <br>
-<section>
   <div class="container">
     <div class="row">
       <div class="col-8">
@@ -27,16 +22,13 @@
         <div class="card mb-3">
           <div class="row g-0">
             <div class="col-md-4 text-center" style="border-style: solid;">
-              <%= listing.photos.each do |photo| %>
-              <%= cl_image_tag photo.key, class:"img-fluid rounded-start", crop: :fit  %>
-              <% end %>
-              <h3>Photo Here</h3>
+            <%= cl_image_tag listing.photos.first.key, class:"img-fluid rounded-start", crop: :thumb unless listing.photos.empty?%>
             </div>
           <div class="col-md-8">
             <div class="card-body">
               <h3 class="card-title"><%= listing.title %></h3>
-              <p class="card-details"><%= listing.details %></p>
               <p class="card-address"><%= listing.address %></p>
+              <p class="card-details"><%= listing.details %></p>
               <p class="card-price">£<%= listing.price %>.00/day</p>
               <p class="card-rating"><%=listing.average_rating %>⭐ (<%= listing.reviews.count%> reviews )</p>
             </div>
@@ -44,13 +36,11 @@
           </div>
         <% end %>
         </div>
-        <hr>
         <% end %>
       </div>
-      <div class="col-4" style="max-width: 100%;">
+      <div class="col-4">
       <%= render "shared/map" %>
       </div>
     </div>
   </div>
-  </div>
-</section>
+</div>
