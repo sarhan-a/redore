@@ -3,6 +3,21 @@
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-4">
+        <% if resource.avatar.attached? %>
+          <%= cl_image_tag @user.avatar.key, width: 200, height: 200, crop: :fill, gravity: :face, radius: :max %>
+        <% else %>
+
+        <% end %>
+      </div>
+      <div class="col-sm-8">
+        <%= f.file_field :avatar %>
+      </div>
+    </div>
+  </div>
+
   <div class="form-inputs">
     <%= f.input :email, required: true, autofocus: true %>
 
