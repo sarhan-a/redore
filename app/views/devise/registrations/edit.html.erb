@@ -1,19 +1,20 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= f.error_notification %>
+<div class="row justify-content-center">
+  <div class="col-lg-4 col-md-6 ml-auto mr-auto">
+    <h2 class="text-center">Edit <%= resource_name.to_s.humanize %></h2>
+  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+    <%= f.error_notification %>
 
   <div class="form-group">
     <div class="row">
       <div class="col-sm-4">
         <% if resource.avatar.attached? %>
-          <%= cl_image_tag @user.avatar.key, width: 200, height: 200, crop: :fill, gravity: :face, radius: :max %>
+          <%= cl_image_tag @user.avatar.key, width: 150, height: 150, crop: :fill, gravity: :face, radius: :max %>
         <% else %>
-
+          <%= image_tag gravatar_image_url(current_user.email), size: 150, class: "rounded-circle" %>
         <% end %>
       </div>
       <div class="col-sm-8">
-        <%= f.file_field :avatar %>
+        <%= f.input :avatar, as: :file %>
       </div>
     </div>
   </div>
@@ -38,16 +39,18 @@
                 input_html: { autocomplete: "current-password" } %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+    <div class="form-actions">
+      <%= f.button :submit, "Update" %>
+    </div>
+  <% end %>
+
+  <h3>Cancel my account</h3>
+
+  <div class="d-flex align-items-center">
+    <div>Unhappy?</div>
+    <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-link" %>
   </div>
-<% end %>
 
-<h3>Cancel my account</h3>
-
-<div class="d-flex align-items-center">
-  <div>Unhappy?</div>
-  <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-link" %>
+  <%= link_to "Back", :back %>
+  </div>
 </div>
-
-<%= link_to "Back", :back %>
