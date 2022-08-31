@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :listings, dependent: :destroy
+  has_one_attached :avatar, dependent: :destroy
 
   validates_presence_of :first_name, :last_name
   validates :email, uniqueness: true
