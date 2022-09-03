@@ -1,0 +1,8 @@
+<div class="container">
+<% current_user.bookings.each do |b| %>
+<% listing = @listings.find(b.listing_id) %>
+<p class= "row">Name:<%= listing.title %></p>
+<p class= "row">Collection Date: <%= b.collection_date %></p>
+<% end %>
+</div>
+<br><br><br><br><br><br>
