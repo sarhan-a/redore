@@ -1,0 +1,28 @@
+.footer-top{
+  background-color: #1F1B2D;
+  color: white;
+  padding-top: 50px;
+  h4 {
+    color: $primary;
+  }
+
+  ul {
+      list-style-type: none;
+    }
+
+  a {
+    color: white;
+    text-decoration: none;
+  }
+
+  a:hover{
+    color: $primary;
+  }
+
+
+}
+
+.footer-bottom{
+  background-color: #1F1B2D;
+  color: white;
+}

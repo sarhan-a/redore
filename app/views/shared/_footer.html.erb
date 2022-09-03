@@ -1,9 +1,9 @@
 <footer>
-  <div class="footer-top" style="border-style: solid;">
+  <div class="footer-top">
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-md-6 footer-contact">
-          <h3>Redore</h3>
+          <h4>Redore</h4>
           <p>
           North, 138 Kingsland Rd<br>
           Shoreditch Stables,<br>
@@ -17,7 +17,7 @@
         <div class="col-lg-3 col-md-6 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+            <li><i class="bx bx-chevron-right"></i><%= link_to "Home", root_path %></li>
             <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
@@ -50,9 +50,9 @@
     </div>
   </div>
 
-  <div class="container py-4">
-    <div class="copyright">
-      &copy; Copyright <strong><span>Redore</span></strong>. All Rights Reserved
+  <div class="footer-bottom">
+    <div class="copyright container">
+        &copy; Copyright <strong><span>Redore</span></strong>. All Rights Reserved
     </div>
   </div>
 </footer>
