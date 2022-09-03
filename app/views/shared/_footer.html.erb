@@ -1,9 +1,9 @@
 <footer>
-  <div class="footer-top" style="border-style: solid;">
+  <div class="footer-top">
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-md-6 footer-contact">
-          <h3>Redore</h3>
+          <h4>Redore</h4>
           <p>
           North, 138 Kingsland Rd<br>
           Shoreditch Stables,<br>
@@ -17,8 +17,8 @@
         <div class="col-lg-3 col-md-6 footer-links">
           <h4>Useful Links</h4>
           <ul>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-            <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+            <li><i class="bx bx-chevron-right"></i><%= link_to "Home", root_path %></li>
+            <li><i class="bx bx-chevron-right"></i><%= link_to "About", root_path(anchor: "about") %></li>
             <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
             <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
           </ul>
@@ -29,30 +29,28 @@
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Recycling</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Donating</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Other services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Other services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Other services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Restore</a></li>
             </ul>
         </div>
 
         <div class="col-lg-3 col-md-6 footer-links">
           <h4>Our Social Networks</h4>
-          <p>Cras fermentum odio eu feugiat lide par naso tierra videa magna derita valies</p>
-          <div class="social-links mt-3">
-            <a href="#" class="twitter"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#" class="facebook"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#" class="instagram"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#" class="google-plus"><i class="fa-brands fa-skype"></i></a>
-            <a href="#" class="linkedin"><i class="fa-brands fa-linkedin"></i></a>
+          <p>Follow us for the latest news about our services and offers</p>
+          <div class="social-links row">
+            <a href="#" class="col-lg-2 col-md-4"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="col-lg-2 col-md-4"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" class="col-lg-2 col-md-4"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="col-lg-2 col-md-4"><i class="fa-brands fa-skype"></i></a>
+            <a href="#" class="col-lg-2 col-md-4"><i class="fa-brands fa-linkedin"></i></a>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <div class="container py-4">
-    <div class="copyright">
-      &copy; Copyright <strong><span>Redore</span></strong>. All Rights Reserved
+  <div class="footer-bottom">
+    <div class="copyright container">
+        &copy; Copyright <strong><span>Redore</span></strong>. All Rights Reserved
     </div>
   </div>
 </footer>
