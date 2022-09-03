@@ -302,7 +302,7 @@ DEPENDENCIES
   devise
   dotenv-rails
   faker
-  font-awesome-sass (~> 6.1.2)
+  font-awesome-sass (~> 6.1)
   geocoder
   gravatar_image_tag
   jbuilder
