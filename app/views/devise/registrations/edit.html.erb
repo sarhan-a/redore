@@ -7,11 +7,7 @@
   <div class="form-group">
     <div class="row">
       <div class="col-sm-4">
-        <% if resource.avatar.attached? %>
-          <%= cl_image_tag @user.avatar.key, width: 150, height: 150, crop: :fill, gravity: :face, radius: :max %>
-        <% else %>
-          <%= image_tag gravatar_image_url(current_user.email), size: 150, class: "rounded-circle" %>
-        <% end %>
+        <%= image_tag user_avatar(current_user), size: 150, crop: :fill, gravity: :face, class: "rounded-circle" %>
       </div>
       <div class="col-sm-8">
         <%= f.input :avatar, as: :file %>
