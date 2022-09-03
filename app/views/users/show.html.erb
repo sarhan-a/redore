@@ -1,0 +1,13 @@
+<div class="container text-center">
+  <h1>Your Bookings</h1>
+  <hr>
+  <div class= "row">
+    <% current_user.bookings.each do |b| %>
+      <div class= "col-4">
+        <p><strong>Business Name:</strong> <%= b.listing.title %></p>
+        <p><strong>Business Address:</strong> <%= b.listing.address %></p>
+        <p><strong>Collection Date:</strong> <%= b.collection_date %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
