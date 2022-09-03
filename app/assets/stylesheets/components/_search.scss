@@ -1,0 +1,68 @@
+.search-box {
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center center;
+  padding: 15px;
+}
+
+.search-box form {
+width: 100%;
+max-width: 1290px;
+}
+
+.search-box form .inner-form {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  background: rgba(255, 255, 255, 0.5);
+  padding: 5px 20px;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 8px;
+
+}
+
+.search-box form .inner-form .input-field {
+  margin-right: 30px;
+}
+
+.search-box form .inner-form .input-field input {
+  height: 100%;
+  background: #fff;
+  border-radius: .5px;
+  border: 0;
+  display: block;
+  width: 100%;
+  padding: 5px 32px;
+  font-size: 20px;
+}
+
+.search-box form .inner-form .input-field input::-webkit-input-placeholder {
+  color: #9a9a9a;
+  font-size: 16px;
+}
+
+.search-box form .inner-form .input-field.first-wrap {
+  flex-grow: 1;
+  border-right: 1px solid rgb(226, 226, 226);
+  display: flex;
+  align-items: center;
+  padding-inline: 7px;
+}
+
+.fa-recycle  {
+  color: gray;
+}
+
+.fa-location-dot  {
+  color: gray;
+}
+
+.search-icon {
+  height: 50px;
+  border-radius: 10px;
+}

@@ -1,0 +1,19 @@
+.border-0 {
+  border: 0 !important;
+}
+.bg-transparent {
+  --bs-bg-opacity: 1;
+  background-color: transparent !important;
+}
+.card-hover {
+  transition: border-color .2s ease-in-out,background-color .2s ease-in-out,box-shadow .2s ease-in-out !important;
+}
+.card-hover:hover, .card-hover.show {
+  box-shadow: 0 .125rem .125rem -0.125rem rgba(31,27,45,.08),0 .25rem .75rem rgba(31,27,45,.08);
+}
+.card-hover[class^=bg-]:hover, .card-hover[class*=" bg-"]:hover, .card-hover[class*=" bg-"].active, .card-hover[class*=" bg-"].show {
+  background-color: #fff !important;
+}
+h2 {
+  font-size: 4rem;
+}
