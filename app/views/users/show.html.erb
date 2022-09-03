@@ -1,8 +1,13 @@
-<div class="container">
-<% current_user.bookings.each do |b| %>
-<% listing = @listings.find(b.listing_id) %>
-<p class= "row">Name:<%= listing.title %></p>
-<p class= "row">Collection Date: <%= b.collection_date %></p>
-<% end %>
+<div class="container text-center">
+  <h1>Your Bookings</h1>
+  <hr>
+  <div class= "row">
+    <% current_user.bookings.each do |b| %>
+      <div class= "col-4">
+        <p><strong>Business Name:</strong> <%= b.listing.title %></p>
+        <p><strong>Business Address:</strong> <%= b.listing.address %></p>
+        <p><strong>Collection Date:</strong> <%= b.collection_date %></p>
+      </div>
+    <% end %>
+  </div>
 </div>
-<br><br><br><br><br><br>

@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
   def show
-    @listings = Listing.all
+    @bookings = current_user.bookings
   end
 end
