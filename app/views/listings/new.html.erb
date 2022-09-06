@@ -1,10 +1,31 @@
-<h1>Create a Listing</h1>
-
-<%= simple_form_for @listing do |f| %>
-<%= f.input :title %>
-<%= f.input :address %>
-<%= f.input :details %>
-<%= f.input :price %>
-<%= f.input :photos, as: :file, input_html: { multiple: true } %>
-<%= f.submit class: 'btn btn-primary' %>
-<% end %>
+<div class="container my-5">
+  <h1 class="fs-3">Add listing</h1>
+  <%= simple_form_for @listing do |f| %>
+  <!-- Basic info -->
+  <div class="card card-body w-75 border-0 shadow-sm p-4 mb-4">
+    <h2 class="fs-4"><i class="fa-solid fa-circle-info text-primary fs-5 me-2"></i>Basic info</h2>
+    <%= f.input :title %>
+  </div>
+  <!-- Location -->
+  <div class="card card-body w-75 border-0 shadow-sm p-4 mb-4">
+    <h2 class="fs-4"><i class="fa-solid fa-location-dot text-primary fs-5 me-2"></i>Location</h2>
+    <%= f.input :address %>
+  </div>
+  <!-- Listing details -->
+  <div class="card card-body w-75 border-0 shadow-sm p-4 mb-4">
+    <h2 class="fs-4"><i class="fa-solid fa-pen-to-square text-primary fs-5 me-2"></i>Listing details</h2>
+    <%= f.input :details %>
+  </div>
+  <!-- Price -->
+  <div class="card card-body w-75 border-0 shadow-sm p-4 mb-4">
+    <h2 class="fs-4"><i class="fa-solid fa-money-bills text-primary fs-5 me-2"></i>Price</h2>
+    <%= f.input :price %>
+  </div>
+  <!-- Photos -->
+  <div class="card card-body w-75 border-0 shadow-sm p-4 mb-4">
+    <h2 class="fs-4"><i class="fa-solid fa-money-bills text-primary fs-5 me-2"></i>Photos</h2>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  </div>
+  <%= f.submit class: 'btn btn-primary fs-6 px-4 py-2' %>
+  <% end %>
+</div>
