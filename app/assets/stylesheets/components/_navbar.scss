@@ -23,3 +23,16 @@
       }
     }
   }
+
+  .dropdown-menu {
+    .dropdown-item {
+      color: $mauve;
+      font-weight: 400;
+
+      &:hover,
+      &:focus {
+        color: $orange;
+        background: transparent;
+      }
+    }
+  }
