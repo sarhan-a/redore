@@ -1,0 +1,5 @@
+meta_product_name: "Redore"
+meta_title: "Redore - Recycle, donate or repair your bulky waste items in just a few clicks"
+meta_description: "Helping you to Recycle, donate or repair your items in just a few clicks"
+meta_image: "logo.png" # should exist in `app/assets/images/`
+twitter_account: "@product_twitter_account"   # required for Twitter Cards
