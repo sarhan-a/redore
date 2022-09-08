@@ -25,13 +25,13 @@
       <div class="col-8">
         <% @listings.each do |listing| %>
         <%= link_to listing do %>
-        <div class="card mb-3">
-          <div class="row g-0">
-            <div class="col-md-4 text-center" style="border-style: solid;">
+        <div class="card-product mb-3">
+          <div class="row">
+            <div class="col-md-4 text-center">
             <%= cl_image_tag listing.photos.first.key, class:"img-fluid rounded-start", crop: :thumb unless listing.photos.empty?%>
             </div>
           <div class="col-md-8">
-            <div class="card-body">
+            <div class="card-product-body">
               <h3 class="card-title"><%= listing.title %></h3>
               <p class="card-address"><%= listing.address %></p>
               <p class="card-details"><%= listing.details %></p>
