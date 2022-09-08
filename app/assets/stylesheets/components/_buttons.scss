@@ -1,0 +1,14 @@
+.btn-primary {
+  color: $white;
+  font-weight: bold;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background-color: darken($orange, 7%);
+    border-color: darken($orange, 7%);
+    color: $white;
+    box-shadow: 0 .25rem .25rem .125rem rgba($orange, .1),
+    0 .375rem .75rem -.125rem rgba($orange, .4);
+  }
+}
