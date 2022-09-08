@@ -13,7 +13,7 @@
         <%= image_tag user_avatar(current_user), class: "avatar-bordered", alt:"user_avatar" %>
       <div class="dropdown-menu dropdown-menu-end">
         <div class="d-flex align-items-start border-bottom px-3 py-1 mb-2" style="width: 16rem;">
-          <%= image_tag user_avatar(current_user), class: "avatar-large" %>
+          <%= cl_image_tag user_avatar(current_user), class: "avatar-large" %>
           <div class="ps-2">
             <h6 class="fs-base mb-0"><%= current_user.first_name + " " + current_user.last_name %></h6>
             <div class="fs-xs py-2"><%= current_user.email %></div>
