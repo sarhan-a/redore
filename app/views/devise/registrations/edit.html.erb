@@ -7,7 +7,7 @@
   <div class="form-group">
     <div class="row">
       <div class="col-sm-4">
-        <%= image_tag user_avatar(current_user), size: 150, crop: :fill, gravity: :face, class: "rounded-circle" %>
+        <%= cl_image_tag user_avatar(current_user), size: 150, crop: :fill, gravity: :face, class: "rounded-circle" %>
       </div>
       <div class="col-sm-8">
         <%= f.input :avatar, as: :file %>
