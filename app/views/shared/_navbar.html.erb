@@ -1,40 +1,88 @@
-<div class="navbar navbar-expand-lg navbar-light navbar-redore bg-light shadow-sm">
+<header class="navbar navbar-redore navbar-expand-lg navbar-light shadow-sm sticky-top">
   <div class="container">
-    <%= link_to root_path, class: "navbar-brand me-2 me-xl-4" do %>
-      <%= image_tag image_url("logo.png"), alt:"logo" %>
+    <%= link_to root_path, class: "navbar-brand flex-shrink-0 mb-2 me-2 me-xl-4" do %>
+      <%= image_tag image_url("logo2.png"), alt:"logo" %>
     <% end %>
-    <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button type="button" class="navbar-toggler ms-auto" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <%= link_to new_listing_path, class:"btn btn-primary btn-sm ms-2 order-lg-3" do %>
-      <i class="fa-sharp fa-plus me-2"></i>Add<span class='d-none d-sm-inline'> listing</span>
-    <% end %>
-    <div class="collapse navbar-collapse order-lg-2" id="navbarSupportedContent">
+    <!-- Only if user is signed in -->
+    <div class="dropdown d-none d-lg-block order-lg-3 my-n2 me-3">
+    <% if user_signed_in? %>
+      <a href="#" class="d-inline-block py-2" data-bs-toggle="dropdown">
+        <%= image_tag user_avatar(current_user), class: "avatar-bordered", alt:"user_avatar" %>
+      <div class="dropdown-menu dropdown-menu-end">
+        <div class="d-flex align-items-start border-bottom px-3 py-1 mb-2" style="width: 16rem;">
+          <%= image_tag user_avatar(current_user), class: "avatar-large" %>
+          <div class="ps-2">
+            <h6 class="fs-base mb-0"><%= current_user.first_name + " " + current_user.last_name %></h6>
+            <div class="fs-xs py-2"><%= current_user.email %></div>
+          </div>
+        </div>
+        <%= link_to edit_user_registration_path, class:"dropdown-item" do %>
+          <i class="fa-regular fa-user me-2"></i>
+          Profile
+        <% end %>
+        <%= link_to user_path(current_user.id), class:"dropdown-item" do %>
+          <i class="fa-regular fa-rectangle-list me-2"></i>
+          My Bookings
+        <% end %>
+        <a href="#" class="dropdown-item">
+          <i class="fa-regular fa-heart me-2"></i>
+          Wishlist
+        </a>
+        <a href="#" class="dropdown-item">
+          <i class="fa-regular fa-star me-2"></i>
+          Reviews
+        </a>
+        <a href="#" class="dropdown-item">
+          <i class="fa-regular fa-bell me-2"></i>
+          Notifications
+        </a>
+        <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">Help</a>
+        <%= link_to "Sign out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+      </div>
+      <%= link_to new_listing_path, class:"btn btn-primary btn-sm ms-4 order-lg-3" do %>
+        <i class="fa-solid fa-plus me-2"></i>Add<span class='d-none d-sm-inline'> listing</span>
+      <% end %>
+      <!-- else if user is not signed in -->
+      <% else %>
+         <%= link_to new_user_session_path, class:"btn btn-primary btn-sm ms-2" do %>
+            <i class="fa-regular fa-user"></i> Sign In
+        <% end %>
+       <% end %>
+    </div>
+    <!-- Will always be displayed regardless of sign in status -->
+    <div class="collapse navbar-collapse order-lg-2" id="navbarUserNav">
       <ul class="navbar-nav">
         <li class="nav-item active">
+          <%= link_to "Home", root_path, class: "nav-link" %>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Go Green</a>
+          <ul class="dropdown-menu">
+            <li>
+              <a href="#" class="dropdown-item">Which brands?</a>
+            </li>
+            <li>
+              <a href="#" class="dropdown-item">Live sustainably</a>
+            </li>
+            <li>
+              <a href="#" class="dropdown-item">Help me choose</a>
+            </li>
+            <li class="dropdown-divider"></li>
+            <li>
+              <a href="#" class="dropdown-item">Hard facts</a>
+            </li>
+          </ul>
+        </li>
+        <li class="nav-item">
           <%= link_to "Explore", listings_path, class: "nav-link" %>
         </li>
-        <% if user_signed_in? %>
-          <li class="nav-item active">
-            <%= link_to "Home", root_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Messages", "#", class: "nav-link" %>
-          </li>
-          <li class="nav-item dropdown">
-            <%= image_tag user_avatar(current_user), class: "dropdown-toggle avatar", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-              <%= link_to "Profile", user_path(current_user.id), class: "dropdown-item" %>
-              <%= link_to "Another action", "#", class: "dropdown-item" %>
-              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-            </div>
-          </li>
-        <% else %>
-          <li class="nav-item">
-            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-          </li>
-        <% end %>
+        <li class="nav-item">
+          <a href="#" class="nav-link">About</a>
+        </li>
       </ul>
-    </div>
   </div>
-</div>
+</header>
