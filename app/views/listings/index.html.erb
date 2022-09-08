@@ -27,16 +27,20 @@
         <%= link_to listing do %>
         <div class="card-product mb-3">
           <div class="row">
-            <div class="col-md-4 text-center">
-            <%= cl_image_tag listing.photos.first.key, class:"img-fluid rounded-start", crop: :thumb unless listing.photos.empty?%>
+            <div class="col-md-4 image">
+            <%= cl_image_tag listing.photos.first.key, class:"img-fluid image-card", crop: :thumb unless listing.photos.empty?%>
             </div>
           <div class="col-md-8">
             <div class="card-product-body">
-              <h3 class="card-title"><%= listing.title %></h3>
-              <p class="card-address"><%= listing.address %></p>
-              <p class="card-details"><%= listing.details %></p>
-              <p class="card-price">£<%= listing.price %>.00/day</p>
-              <p class="card-rating"><%=listing.average_rating %>⭐ (<%= listing.reviews.count%> reviews )</p>
+            <div class="title">
+              <h3><%= listing.title %></h3>
+              <p><%= listing.address %></p>
+            </div>
+              <p><%= listing.details %></p>
+            <div class="price fixed-bottom">
+              <p><%= listing.price %>.00/day</p>
+              <p><%=listing.average_rating %>⭐ (<%= listing.reviews.count%> reviews )</p>
+            </div>
             </div>
           </div>
           </div>
