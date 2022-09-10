@@ -36,6 +36,7 @@ class ListingsController < ApplicationController
   end
 
   def edit
+    add_breadcrumb(@listing.title, listing_path)
     add_breadcrumb('Edit')
   end
 

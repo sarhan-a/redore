@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
     { host: ENV["www.redore.co.uk"] || "localhost:3000" }
   end
 
-  def add_breadcrumb(label, path = nil, current = false)
+  def add_breadcrumb(label, path = nil, current: false)
     @breadcrumbs << {
       label: label,
       path: path,
