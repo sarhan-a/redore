@@ -1,5 +1,6 @@
 class ListingsController < ApplicationController
   before_action :find_listing, only: %i[show edit update destroy]
+  before_action :add_index_breadcrumb, only: %i[show new edit]
   skip_before_action :authenticate_user!, only: %i[index show]
 
   def index
@@ -12,13 +13,16 @@ class ListingsController < ApplicationController
         info_window: render_to_string(partial: "popup", locals: {listing: listing})
       }
     end
+    add_breadcrumb('Listings')
   end
 
   def show
+    add_breadcrumb(@listing.title)
   end
 
   def new
     @listing = Listing.new
+    add_breadcrumb('New')
   end
 
   def create
@@ -32,6 +36,7 @@ class ListingsController < ApplicationController
   end
 
   def edit
+    add_breadcrumb('Edit')
   end
 
   def update
@@ -52,5 +57,9 @@ class ListingsController < ApplicationController
 
   def listing_params
     params.require(:listing).permit(:title, :address, :details, :price, photos: [])
+  end
+
+  def add_index_breadcrumb
+    add_breadcrumb('Listings', listings_path)
   end
 end
