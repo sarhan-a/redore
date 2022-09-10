@@ -1,0 +1,21 @@
+.confirm {
+  text-align: center;
+}
+
+.confirm #title {
+  padding-top: 20px;
+  text-align: center;
+  background: #3ACFB6;
+background: linear-gradient(to left, #3ACFB6 0%, #6FCF25 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+}
+
+.confirm #image {
+  padding-top: 40px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}

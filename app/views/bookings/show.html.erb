@@ -1,5 +1,12 @@
 <div class="container">
-  <h1>Booking for <%= link_to @booking.listing.title, listing_path(@booking.listing) %></span></h1>
-  <p>Date: <%= @booking.collection_date.strftime('%B %e, %Y') %></p>
-  <p>Customer: <%= @booking.user.first_name %> <%= @booking.user.last_name %></p>
+  <div class="confirm">
+    <img id="image" src="<%= asset_path('confirmation.png') %>" alt="image-1">
+    <h2 id="title">You have booked your Recycling!</h2>
+    <h4 id="title">Thank you for helping the mother earth. </h4>
+    <p>Date: <%= @booking.collection_date.strftime('%B %e, %Y') %></p>
+    <p>Company: <%= link_to @booking.listing.title, listing_path(@booking.listing) %></p>
+    <%= link_to root_path do %>
+        <p class="btn btn-primary">Back to Home</p>
+        <% end %>
+  </div>
 </div>
