@@ -26,21 +26,23 @@
         <% @listings.each do |listing| %>
         <%= link_to listing do %>
         <div class="card-product mb-3">
-          <div class="row">
-            <div class="col-md-4 image">
-            <%= cl_image_tag listing.photos.first.key, class:"img-fluid image-card", crop: :thumb unless listing.photos.empty?%>
+          <div class="row g-0">
+            <div class="col-md-4">
+              <%= cl_image_tag listing.photos.first.key, class:"img-fluid rounded-start", crop: :thumb unless listing.photos.empty?%>
             </div>
           <div class="col-md-8">
             <div class="card-product-body">
-            <div class="title">
-              <h3><%= listing.title %></h3>
-              <p><%= listing.address %></p>
-            </div>
-              <p><%= listing.details %></p>
-            <div class="price fixed-bottom">
-              <p><%= listing.price %>.00/day</p>
-              <p><%=listing.average_rating %>⭐ (<%= listing.reviews.count%> reviews )</p>
-            </div>
+              <div class="title">
+                <h3><%= listing.title %></h3>
+                <p><%= listing.address %></p>
+              </div>
+              <div class="details">
+                <p><%= listing.details.truncate(200) %></p>
+              </div>
+              <div class="price">
+                <p><i class="fa-solid fa-money-bill"></i> <%= listing.price %>.00</p>
+                <p><%=listing.average_rating %>⭐ (<%= listing.reviews.count%> reviews )</p>
+              </div>
             </div>
           </div>
           </div>
