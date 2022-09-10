@@ -25,18 +25,24 @@
       <div class="col-8">
         <% @listings.each do |listing| %>
         <%= link_to listing do %>
-        <div class="card mb-3">
+        <div class="card-product mb-3">
           <div class="row g-0">
-            <div class="col-md-4 text-center" style="border-style: solid;">
-            <%= cl_image_tag listing.photos.first.key, class:"img-fluid rounded-start", crop: :thumb unless listing.photos.empty?%>
+            <div class="col-md-4">
+              <%= cl_image_tag listing.photos.first.key, class:"img-fluid rounded-start", crop: :thumb unless listing.photos.empty?%>
             </div>
           <div class="col-md-8">
-            <div class="card-body">
-              <h3 class="card-title"><%= listing.title %></h3>
-              <p class="card-address"><%= listing.address %></p>
-              <p class="card-details"><%= listing.details %></p>
-              <p class="card-price">£<%= listing.price %>.00/day</p>
-              <p class="card-rating"><%=listing.average_rating %>⭐ (<%= listing.reviews.count%> reviews )</p>
+            <div class="card-product-body">
+              <div class="title">
+                <h3><%= listing.title %></h3>
+                <p><%= listing.address %></p>
+              </div>
+              <div class="details">
+                <p><%= listing.details.truncate(200) %></p>
+              </div>
+              <div class="price">
+                <p><i class="fa-solid fa-money-bill"></i> <%= listing.price %>.00</p>
+                <p><%=listing.average_rating %>⭐ (<%= listing.reviews.count%> reviews )</p>
+              </div>
             </div>
           </div>
           </div>

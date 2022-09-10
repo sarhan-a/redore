@@ -1,0 +1,46 @@
+#cards{
+  margin-top: 80px;
+  margin-bottom: 80px;
+}
+
+.card-product{
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+
+  a{
+    text-decoration: none;
+    color: rgb(10, 10, 10);
+  }
+
+  .card-product-body{
+
+    .title{
+      padding-top: 20px;
+      margin-inline: 20px;
+      text-align: center;
+      h3{
+        font-weight: bolder;
+        color: $primary;
+      }
+      color: rgb(10, 10, 10);
+      border-bottom: 0.7px solid black;
+    }
+
+    .price{
+      font-size: 18px;
+      padding-inline: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between ;
+    }
+
+    .details{
+      padding-top: 10px;
+      font-weight: lighter;
+      color: rgb(55, 55, 55);
+      text-align: center;
+      padding-inline: 20px;
+      text-rendering: geometricPrecision;
+    }
+  }
+}
