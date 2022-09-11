@@ -1,0 +1,19 @@
+<div class="container">
+  <nav class="mb-3 pt-md-3" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item">
+        <%= link_to "Home", root_path %>
+      </li>
+      <% @breadcrumbs.each do |breadcrumb| %>
+        <% if breadcrumb[:path].nil? %>
+          <li class="breadcrumb-item active" aria-current="page"></li>
+            <%= breadcrumb[:label] %>
+        <% else %>
+          <li class="breadcrumb-item">
+            <%= link_to breadcrumb[:label], breadcrumb[:path] %>
+          </li>
+        <% end %>
+      <% end %>
+    </ol>
+  </nav>
+</div>

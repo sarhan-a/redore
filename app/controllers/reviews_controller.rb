@@ -1,8 +1,11 @@
 class ReviewsController < ApplicationController
   before_action :set_listing
+  before_action :add_index_breadcrumb, only: %i[new]
 
   def new
     @review = Review.new
+    add_breadcrumb(@listing.title, listing_path(@listing))
+    add_breadcrumb('Add a review')
   end
 
   def create

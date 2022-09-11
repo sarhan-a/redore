@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_breadcrumbs
+
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
     devise_parameter_sanitizer.permit(:sign_up, keys: %i[first_name last_name])
@@ -9,5 +11,21 @@ class ApplicationController < ActionController::Base
   end
   def default_url_options
     { host: ENV["www.redore.co.uk"] || "localhost:3000" }
+  end
+
+  def add_breadcrumb(label, path = nil, current: false)
+    @breadcrumbs << {
+      label:,
+      path:,
+      current:
+    }
+  end
+
+  def set_breadcrumbs
+    @breadcrumbs = []
+  end
+
+  def add_index_breadcrumb
+    add_breadcrumb("Listings", listings_path)
   end
 end
