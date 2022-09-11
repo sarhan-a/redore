@@ -3,10 +3,18 @@
     <img id="image" src="<%= asset_path('confirmation.png') %>" alt="image-1">
     <h2 id="title">You have booked your Recycling!</h2>
     <h4 id="title">Thank you for helping the mother earth. </h4>
-    <p>Date: <%= @booking.collection_date.strftime('%B %e, %Y') %></p>
-    <p>Company: <%= link_to @booking.listing.title, listing_path(@booking.listing) %></p>
-    <%= link_to root_path do %>
+    <div class="py-3 confirm-page-bottom">
+      <div class="pe-3" style="display: inline-block;">
+        <%= link_to root_path do %>
         <p class="btn btn-primary">Back to Home</p>
         <% end %>
+      </div>
+      <div style="display: inline-block;">
+        <%= link_to user_path(current_user.id) do %>
+        <p class="btn btn-primary">My Bookings</p>
+        <% end %>
+      </div>
+    </div>
+
   </div>
 </div>

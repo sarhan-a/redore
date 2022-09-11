@@ -6,10 +6,10 @@
   padding-top: 20px;
   text-align: center;
   background: #3ACFB6;
-background: linear-gradient(to left, #3ACFB6 0%, #6FCF25 100%);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-
+  background: linear-gradient(to left, #3ACFB6 0%, #6FCF25 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 3px rgba(255,255,255,0.1);
 }
 
 .confirm #image {
