@@ -1,37 +1,43 @@
-<div class="container pt-5">
-  <h1>Confirm your booking</h1>
-<br>
-<div class="row review">
-  <div class="col">
-  <%= form_with model: [@listing, @booking] do |f| %>
-  <%= f.text_field :collection_date,
-  data: {
-  controller: "flatpickr",
-  inline: true,
-  flatpickr_date_format: "Y-m-d",
-  flatpickr_min_date: Time.current,
-  flatpickr_max_date: Time.current + 90.days,
-  flatpickr_disable: @booked_dates
-  },
-  placeholder: "Select a date", style: "display: none;"%>
-  </div>
-  <div class="col-8 user-details">
-    <h3>Collect from</h3>
-    <form class="row g-3">
-      <div class="col-12 pb-1">
+<div class="container pt-4">
+  <h1><%= @listing.title %></h1>
+  <h3>Confirm your booking</h3>
+    <p>When will you be in? Please select a date to continue booking our service.</p>
+  <div class="row">
+    <div class="col my-auto booking-calendar">
+      <%= form_with model: [@listing, @booking] do |f| %>
+      <%= f.text_field :collection_date,
+      data: {
+      controller: "flatpickr",
+      inline: true,
+      flatpickr_date_format: "Y-m-d",
+      flatpickr_min_date: Time.current,
+      flatpickr_max_date: Time.current + 90.days,
+      flatpickr_disable: @booked_dates
+      },
+      placeholder: "Select a date", style: "display: none;"%>
+    </div>
+    <div class="col-8 booking-user-details">
+      <h3>Collect from</h3>
+      <form class="row g-3">
+      <div class="col-12 pb-2">
+        <i class="fa-solid fa-map"></i>
+        <label for="inputAddress" class="form-label">Street address</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="North, 138 Kingsland Rd Shoreditch Stable">
+      </div>
+      <div class="col-12 pb-2">
         <i class="fa-sharp fa-solid fa-city"></i>
         <label for="inputCity" class="form-label">City</label>
         <input type="text" class="form-control" id="inputCity" placeholder="London">
       </div>
-      <div class="col-12 pb-1">
-        <i class="fa-solid fa-map"></i>
-        <label for="inputAddress" class="form-label">Address</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="North, 138 Kingsland Rd Shoreditch Stable">
-      </div>
-      <div class="col-12 pb-1">
-        <i class="fa-solid fa-at"></i>
+      <div class="col-12 pb-2">
+        <i class="fa-solid fa-location-dot"></i>
         <label for="inputPostcode" class="form-label">Postcode</label>
         <input type="text" class="form-control" id="inputPostcode" placeholder="E2 8DY">
+      </div>
+      <div class="col-12 pb-2">
+        <i class="fa-solid fa-phone"></i>
+        <label for="inputPhone" class="form-label">Phone number</label>
+        <input type="text" class="form-control" id="inputPhone" placeholder="07779657007">
       </div>
       <div class="col-12 pt-3">
         <div class="form-check">
@@ -41,14 +47,15 @@
           </label>
         </div>
       </div>
-  </div>
-      <div class="button pt-3">
+    </div>
+      <div class="button pt-4 mt-5">
         <%= f.submit "Confirm Booking", class: "btn btn-primary w-100" %>
       </div>
-</div>
-    </form>
-</div>
+      </form>
+  </div>
 <% end %>
+</div>
+<br>
 <br>
 <br>
 <br>
