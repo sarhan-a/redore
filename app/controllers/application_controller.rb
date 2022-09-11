@@ -15,13 +15,17 @@ class ApplicationController < ActionController::Base
 
   def add_breadcrumb(label, path = nil, current: false)
     @breadcrumbs << {
-      label: label,
-      path: path,
-      current: current
+      label:,
+      path:,
+      current:
     }
   end
 
   def set_breadcrumbs
     @breadcrumbs = []
+  end
+
+  def add_index_breadcrumb
+    add_breadcrumb("Listings", listings_path)
   end
 end

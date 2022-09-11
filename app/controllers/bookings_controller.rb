@@ -30,7 +30,7 @@ class BookingsController < ApplicationController
   def index
     @listing = Listing.find(params[:listing_id])
     @bookings = @listing.bookings
-    add_breadcrumb(@listing.title, listing_bookings_path(@listing))
+    add_breadcrumb(@listing.title, listing_path(@listing))
     add_breadcrumb('Bookings')
   end
 
@@ -38,9 +38,5 @@ class BookingsController < ApplicationController
 
   def booking_params
     params.require(:booking).permit(:collection_date)
-  end
-
-  def add_index_breadcrumb
-    add_breadcrumb("Listings", listings_path)
   end
 end
