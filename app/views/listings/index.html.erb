@@ -12,8 +12,7 @@
 <%= render "shared/filter" %>
 
 <div class="pb-2">
-<%= sort_link(@q, :price, "Price", default_order: :asc) %>
-<%= sort_link(@q, :reviews, "Ratings", order: :asc) %>
+<p> Sort by: <%= sort_link(@q, :price, "Price", default_order: :asc) %> </p>
 </div>
 <br>
   <div class="container">
