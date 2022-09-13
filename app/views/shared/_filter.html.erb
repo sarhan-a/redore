@@ -1,5 +1,5 @@
 
-<%= search_form_for @q, html: {class:"row justify-content-center align-items-center pb-3"} do |f| %>
+<%= search_form_for @q, html: {class:"row sort justify-content-center"} do |f| %>
 
 <div class="form-group col-auto">
 <%= f.label :postcode, class:"col-form-label" %>
@@ -8,19 +8,23 @@
 <%= f.search_field :address_cont, class:"form-control"%>
 </div>
 
-<div class="form-group  col-auto">
-<%= f.label :min_price, class:"col-form-label" %>
-</div>
-<div class="col-auto">
-<%= f.search_field :price_gteq, class:"form-control" %>
+
+<div class="dropdown col-auto">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Price
+  </button>
+  <div class="dropdown-menu p-2">
+    <div class="form-group col-auto">
+    <%= f.label :min_price, class:"col-form-label" %>
+    <%= f.search_field :price_gteq, class:"form-control" %>
+    </div>
+    <div class="col-auto">
+    <%= f.label :max_price, class:"col-form-label" %>
+    <%= f.search_field :price_lteq, class:"form-control" %>
+    </div>
+  </div>
 </div>
 
-<div class="form-group col-auto">
-<%= f.label :max_price, class:"col-form-label" %>
-</div>
-<div class="col-auto">
-<%= f.search_field :price_lteq, class:"form-control" %>
-</div>
 
 <div class="form-group col-auto">
 <%= f.label :collection_date, class:"col-form-label" %>
@@ -29,7 +33,7 @@
 <%= f.date_field :bookings_collection_date_not_eq, class:"form-control", style:"max-width: 200px" %>
 </div>
 
-<div class="col-auto pt-3">
+<div class="col-auto">
 <%= f.submit 'Filter', class:"btn btn-primary" %>
 </div>
 
