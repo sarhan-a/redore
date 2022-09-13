@@ -7,10 +7,14 @@ Rails.application.routes.draw do
   get '/facts', to: "pages#facts"
   get '/help', to: "pages#help"
   get '/live_sustainably', to: "pages#live_sustainably"
+  get "error", to: "pages#error"
+
+
 
   resources :listings do
     resources :bookings, only: %i[new create show index]
     resources :collection_dates, only: %i[new create show index]
     resources :reviews, only: %i[new create]
   end
+  get '*path', to: redirect("/error")
 end

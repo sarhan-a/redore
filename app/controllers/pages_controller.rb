@@ -25,4 +25,7 @@ class PagesController < ApplicationController
   def live_sustainably
     add_breadcrumb('Sustainable life')
   end
+
+  def error
+  end
 end
