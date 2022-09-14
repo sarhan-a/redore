@@ -39,7 +39,7 @@
       <div id="content-wrap">
         <%= render "shared/navbar" %>
         <%= render "shared/flashes" %>
-        <%= render "shared/breadcrumbs" unless current_page?(root_path) %>
+        <%= render "shared/breadcrumbs" unless current_page?(root_path) || (error_path) %>
         <%= yield %>
       </div>
       <%= render "shared/footer" %>

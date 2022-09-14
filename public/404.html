@@ -6,7 +6,7 @@
     <style>
       .page_404 {
         text-align: center;
-        padding: 48px 0;
+        padding: 64px 56px;
         background: #fff;
         font-family: "Arvo", sans-serif;
       }
@@ -26,7 +26,7 @@
       }
 
       .link_404 {
-        color: #fff !important;
+        color: #fff;
         padding: 10px 20px;
         background: #39ac31;
         margin: 20px 0;
@@ -37,6 +37,12 @@
         border-radius:12px;
       }
 
+      a:hover {
+        background-color:#32902c;
+        box-shadow: 0 .25rem .25rem .125rem rgba(50, 144, 44, 0.1),
+        0 .375rem .75rem -.125rem rgba(50, 144, 44, .4);
+      }
+
       .content_box_404 {
         margin-top: -50px;
         text-align: center;
@@ -44,18 +50,18 @@
     </style>
   </head>
 
-  <body class="rails-default-error-page">
+  <body>
   <!-- This file lives in public/404.html -->
     <section class="page_404">
       <div class="container">
         <div class="row">
           <div class="col-sm-12 ">
-            <div class="col-sm-10 col-sm-offset-1  text-center">
+            <div class="col-sm-10 col-sm-offset-1 text-center">
               <div class="four_zero_four_bg">
                 <h1 class="text-center">404</h1>
               </div>
               <div class="content_box_404">
-                <h3>Looks like you're lost</h3>
+                <h2>Looks like you're lost</h2>
                 <p>The page you are looking for is not available!</p>
                 <a href="/" class="link_404">Back to Home</a>
               </div>
