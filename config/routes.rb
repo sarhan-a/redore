@@ -9,8 +9,6 @@ Rails.application.routes.draw do
   get '/live_sustainably', to: "pages#live_sustainably"
   get "error", to: "pages#error"
 
-
-
   resources :listings do
     resources :bookings, only: %i[new create show index]
     resources :collection_dates, only: %i[new create show index]
