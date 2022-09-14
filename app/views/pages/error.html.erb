@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>The page you were looking for doesn't exist (500)</title>
+    <title>The page you were looking for doesn't exist (error)</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <style>
-      .page_500 {
+      .page_error {
         text-align: center;
         padding: 48px 0;
         background: #fff;
         font-family: "Arvo", sans-serif;
       }
 
-      .page_500 img {
+      .page_error img {
         width: 100%;
       }
 
@@ -25,7 +25,7 @@
         font-size: 64px;
       }
 
-      .link_500 {
+      .link_error {
         color: #fff !important;
         padding: 10px 20px;
         background: #39ac31;
@@ -37,7 +37,7 @@
         border-radius:12px;
       }
 
-      .content_box_500 {
+      .content_box_error {
         margin-top: -50px;
         text-align: center;
       }
@@ -45,22 +45,20 @@
   </head>
 
   <body class="rails-default-error-page">
-  <!-- This file lives in public/500.html -->
-    <section class="page_500">
+  <!-- This file lives in public/error.html -->
+    <section class="page_error">
       <div class="container">
         <div class="row">
-          <div class="col-sm-12 ">
-            <div class="col-sm-10 col-sm-offset-1  text-center">
+            <div class="col-sm-12 text-center">
               <div class="four_zero_four_bg">
-                <h1 class="text-center ">500</h1>
+                <h1 class="text-center ">Error</h1>
               </div>
-              <div class="content_box_500">
+              <div class="content_box_error">
                 <h3>Looks like you're lost</h3>
                 <p>The page you are looking for is not available!</p>
-                <a href="/" class="link_500">Back to Home</a>
+                <a href="/" class="link_error">Back to Home</a>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </section>
