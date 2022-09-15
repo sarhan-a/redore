@@ -1,13 +1,30 @@
 <div class="container text-center">
-  <h1>Your Bookings</h1>
-  <hr>
-  <div class= "row">
+
+  <h1 class="pt-3"><strong>Your Bookings</strong></h1>
+
+  <% if current_user.bookings.empty? %>
+    <p class="mt-4" style="font-weight: lighter; font-size: 18px">You have no bookings yet.</p>
+    <% else %>
+  <div class= "row mt-5 justify-content-center">
     <% current_user.bookings.each do |b| %>
-      <div class= "col-4">
-        <p><strong>Business Name:</strong> <%= b.listing.title %></p>
-        <p><strong>Business Address:</strong> <%= b.listing.address %></p>
-        <p><strong>Collection Date:</strong> <%= b.collection_date %></p>
+      <div class= "card-booking text-center col-3">
+        <%= link_to listing_booking_path(:listing_id) do %>
+
+        <div class="listing-title pt-2">
+          <h5><%= b.listing.title %></h5>
+        </div>
+
+        <div class="address">
+          <p><%= b.listing.address %></p>
+        </div>
+
+        <div class="date">
+          <p>Collection Date: <%= b.collection_date %></p>
+        </div>
+
+        <% end %>
       </div>
     <% end %>
   </div>
+  <% end %>
 </div>

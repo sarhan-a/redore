@@ -1,0 +1,27 @@
+.card-booking {
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  margin-inline: 10px;
+  margin-bottom: 20px;
+  min-height: 220px;
+
+  a {
+    text-decoration: none;
+  }
+
+  .address {
+    font-weight: lighter;
+    color: rgb(74, 74, 74);
+  }
+
+  .listing-title {
+    color: $primary;
+    margin-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  .date {
+    color: rgb(72, 72, 72);
+    margin-bottom: 20px;
+  }
+}
