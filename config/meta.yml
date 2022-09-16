@@ -1,5 +1,5 @@
 meta_product_name: "Redore"
-meta_title: "Recycle, Donate, Restore | Redore"
-meta_description: "Helping you book collections of bulky waste items in just a few clicks"
-meta_image: "couple_og.png" # should exist in `app/assets/images/`
+meta_title: "Recycle, Donate, Restore with Redore"
+meta_description: "Book collections for your unwanted bulky waste items in just a few clicks"
+meta_image: "redore_van.png" # should exist in `app/assets/images/`
 twitter_account: "@product_twitter_account"   # required for Twitter Cards

@@ -45,10 +45,9 @@
       <!-- User actions -->
       <li> <%= link_to 'Choose another', listings_path %></li>
       <li> <%= link_to 'Back to home', root_path %></li>
-      <!-- Prevent owners from booking or reviewing their own listings -->
+      <!-- Prevent owners from booking their own listings -->
       <% unless current_user == @listing.user %>
         <li> <%= link_to 'Book now!', new_listing_booking_path(@listing) %></li>
-        <li> <%= link_to 'Leave review', new_listing_review_path(@listing) %></li>
       <% end %>
       <!-- Owner actions -->
       <% if current_user == @listing.user %>
