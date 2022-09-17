@@ -23,6 +23,7 @@ class BookingsController < ApplicationController
 
   def show
     @booking = Booking.find(params[:id])
+    @listing = Listing.find(params[:listing_id])
     add_breadcrumb(@booking.listing.title, listing_path(@booking.listing))
     add_breadcrumb('Your booking')
   end
