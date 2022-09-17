@@ -5,6 +5,11 @@
         <%= @listing.average_rating.round(2) %> (<%= @listing.reviews.count %> customer reviews)
     </h3>
     <div class="d-flex flex-sm-row flex-column align-items-sm-center align-items-stretch justify-content-between">
+      <% unless current_user == @listing.user %>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <i class="fa-solid fa-pen-to-square me-1"></i>Leave review
+      </button>
+      <% end %>
       <!-- TODO Sort by options on the right side -->
       <div class="d-flex align-items-center ms-sm-4">
         <label class="me-2 pe-1 text-nowrap" for="reviews-sorting"><i class="fa-solid fa-sort text-muted mt-n1 me-2"></i>Sort by:</label>
