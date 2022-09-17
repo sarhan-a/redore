@@ -1,15 +1,69 @@
-<div class="container">
-  <h2>Customer Reviews</h2>
-  <% if @listing.reviews.present? %>
-    <p>⭐<%= @listing.average_rating.round(2) %> out of 5</p>
-    <p><strong><%= @listing.reviews.count %> Reviews</strong></p>
-      <% @listing.reviews.each do |review| %>
-        <div class="card">
-          <p>Rating: <%= '⭐' * review.rating%></p>
-          <p>Comments: <%= review.content %></p>
-        </div>
+<% if @listing.reviews.present? %>
+  <div class="mb-4 pb-4 border-bottom">
+    <h3 class="h4 pb-3">
+      <i class="fa-solid fa-star mt-n1 me-2 lead align-middle text-warning"></i>
+        <%= @listing.average_rating.round(2) %> (<%= @listing.reviews.count %> customer reviews)
+    </h3>
+    <div class="d-flex flex-sm-row flex-column align-items-sm-center align-items-stretch justify-content-between">
+      <!-- Prevent owners from reviewing their own listings -->
+      <% unless current_user == @listing.user %>
+        <%= link_to new_listing_review_path(@listing), class:"btn btn-outline-primary mb-sm-0 mb-3" do %>
+          <i class="fa-solid fa-pen-to-square me-1"></i>Leave review</a>
+        <% end %>
       <% end %>
-  <% else %>
-    <p> No reviews yet </p>
-  <% end %>
-</div>
+      <!-- TODO Sort by options on the right side -->
+      <div class="d-flex align-items-center ms-sm-4">
+        <label class="me-2 pe-1 text-nowrap" for="reviews-sorting"><i class="fa-solid fa-sort text-muted mt-n1 me-2"></i>Sort by:</label>
+        <select class="form-select" id="reviews-sorting">
+          <option>Newest</option>
+          <option>Oldest</option>
+          <option>Popular</option>
+          <option>High rating</option>
+          <option>Low rating</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <!-- review -->
+  <div class="mb-4 pb-4 border-bottom">
+    <div class="d-flex justify-content-between mb-3">
+      <div class="d-flex align-items-center pe-2">
+        <img class="rounded-circle me-1" src="" width="48" alt="Avatar">
+        <div class="ps-2">
+          <h6 class="fs-base mb-0">John Doe</h6>
+          <span class="star-rating">
+            <i class="star-rating-icon fa-solid fa-star active"></i>
+          </span>
+        </div>
+      </div>
+      <span class="text-muted fs-sm">Jan 17, 2021</span>
+    </div>
+    <p>
+      Elementum ut quam tincidunt egestas vitae elit, hendrerit. Ullamcorper nulla amet lobortis elit, nibh condimentum enim.
+    </p>
+    <div class="d-flex align-items-center">
+      <button class="btn-like" type="button">
+        <i class="fa-regular fa-thumbs-up"></i>
+        <span>(3)</span>
+      </button>
+      <div class="border-end me-1">&nbsp;</div>
+      <button class="btn-dislike" type="button">
+        <i class="fa-regular fa-thumbs-down"></i>
+        <span>(0)</span>
+      </button>
+    </div>
+  </div>
+<% else %>
+  <div class="mb-4 pb-4 border-bottom">
+    <div class="d-flex flex-sm-row flex-column align-items-sm-center align-items-stretch justify-content-between">
+      <h3 class="h4 pb-3">
+      No reviews yet
+      </h3>
+      <% unless current_user == @listing.user %>
+        <%= link_to new_listing_review_path(@listing), class:"btn btn-outline-primary mb-sm-0 mb-3" do %>
+          <i class="fa-solid fa-pen-to-square me-1"></i>Add review</a>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

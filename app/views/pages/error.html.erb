@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>The page you were looking for doesn't exist (404)</title>
+    <title>The page you were looking for doesn't exist (error)</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <style>
-      .page_404 {
+      .page_error {
         text-align: center;
-        padding: 64px 56px;
+        padding: 64px 0;
         background: #fff;
         font-family: "Arvo", sans-serif;
       }
 
-      .page_404 img {
+      .page_error img {
         width: 100%;
       }
 
@@ -25,8 +25,8 @@
         font-size: 64px;
       }
 
-      .link_404 {
-        color: #fff;
+      .link_error {
+        color: #fff !important;
         padding: 10px 20px;
         background: #39ac31;
         margin: 20px 0;
@@ -37,13 +37,13 @@
         border-radius:12px;
       }
 
-      a:hover {
-        background-color:#32902c;
-        box-shadow: 0 .25rem .25rem .125rem rgba(50, 144, 44, 0.1),
-        0 .375rem .75rem -.125rem rgba(50, 144, 44, .4);
+      .link_error:hover {
+        background-color:#fd5631;
+        box-shadow: 0 .25rem .25rem .125rem rgba(253, 86, 49, 0.1),
+        0 .375rem .75rem -.125rem rgba(253, 86, 49, .4);
       }
 
-      .content_box_404 {
+      .content_box_error {
         margin-top: -50px;
         text-align: center;
       }
@@ -51,22 +51,20 @@
   </head>
 
   <body>
-  <!-- This file lives in public/404.html -->
-    <section class="page_404">
+  <!-- This file lives in public/error.html -->
+    <section class="page_error">
       <div class="container">
         <div class="row">
-          <div class="col-sm-12 ">
-            <div class="col-sm-10 col-sm-offset-1 text-center">
+            <div class="col-sm-12 text-center">
               <div class="four_zero_four_bg">
-                <h1 class="text-center">404</h1>
+                <h1 class="text-center ">Error</h1>
               </div>
-              <div class="content_box_404">
-                <h2>Looks like you're lost</h2>
+              <div class="content_box_error">
+                <h3>Looks like you're lost</h3>
                 <p>The page you are looking for is not available!</p>
-                <a href="/" class="link_404">Back to Home</a>
+                <a href="/" class="link_error">Back to Home</a>
               </div>
             </div>
-          </div>
         </div>
       </div>
     </section>

@@ -1,7 +1,7 @@
 <header class="navbar navbar-redore navbar-expand-lg navbar-light shadow-sm sticky-top">
   <div class="container">
     <%= link_to root_path, class: "navbar-brand flex-shrink-0 mb-2 me-2 me-xl-4" do %>
-      <%= image_tag image_url("logo2.png"), alt:"logo" %>
+      <%= image_tag image_url("logo.png"), alt:"logo" %>
     <% end %>
     <button type="button" class="navbar-toggler ms-auto" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -63,17 +63,17 @@
           <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">Go Green</a>
           <ul class="dropdown-menu">
             <li>
-              <a href="#" class="dropdown-item">Which brands?</a>
+              <%= link_to "Which brands?", brands_path, class: "dropdown-item" %>
             </li>
             <li>
-              <a href="#" class="dropdown-item">Live sustainably</a>
+              <%= link_to "Live sustainably", live_sustainably_path, class: "dropdown-item" %>
             </li>
             <li>
-              <a href="#" class="dropdown-item">Help me choose</a>
+              <%= link_to "Help me choose", help_path, class: "dropdown-item" %>
             </li>
             <li class="dropdown-divider"></li>
             <li>
-              <a href="#" class="dropdown-item">Hard facts</a>
+              <%= link_to "Hard facts", facts_path, class: "dropdown-item" %>
             </li>
           </ul>
         </li>
@@ -81,7 +81,7 @@
           <%= link_to "Explore", listings_path, class: "nav-link" %>
         </li>
         <li class="nav-item">
-          <a href="#" class="nav-link">About</a>
+          <%= link_to "About", about_path, class: "nav-link" %>
         </li>
       </ul>
   </div>

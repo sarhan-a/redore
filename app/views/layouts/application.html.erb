@@ -31,6 +31,7 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
+    <link rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/themes/material_green.css">
   </head>
 
   <body>
@@ -38,6 +39,7 @@
       <div id="content-wrap">
         <%= render "shared/navbar" %>
         <%= render "shared/flashes" %>
+        <%= render "shared/breadcrumbs" unless current_page?(root_path) || current_page?(error_path)%>
         <%= yield %>
       </div>
       <%= render "shared/footer" %>

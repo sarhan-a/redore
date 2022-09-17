@@ -5,20 +5,15 @@
 <br>
 <br>
 
-  <div class="index-top pt-3">
-    <h2> We found <%= @listings.count %> businesses that can help you ...</h2>
-    <div class="row">
-      <div class="col-8 d-flex flex-row">
-        <button>Rating</button>
-        <button>Sustainablity</button>
-        <button>Price</button>
-      </div>
-      <div class="col-4 d-flex flex-row-reverse">
-        <button><%= link_to "Create Listing", new_listing_path %></button>
-      </div>
-    </div>
-  </div>
-    <%= render "shared/filter" %>
+<div class="index-top pt-3 pb-5">
+  <h2> We found <%= @listings.count %> businesses that can help you</h2>
+</div>
+
+<%= render "shared/filter" %>
+
+<div>
+<p> Sort by: <%= sort_link(@q, :price, "Price", default_order: :asc) %> </p>
+</div>
 <br>
   <div class="container">
     <div class="row">
