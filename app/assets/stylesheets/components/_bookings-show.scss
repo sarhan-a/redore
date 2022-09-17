@@ -19,3 +19,13 @@
   margin-right: auto;
   width: 40%;
 }
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.col {
+  display: flex;
+  justify-content: center;
+}

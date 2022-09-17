@@ -1,4 +1,29 @@
 <div class="container">
+  <div class="card pt-3 confirm-details">
+    <div class="container details">
+      <div class="row">
+        <div class="col">
+          <ul>
+            <li><h3>Confirmation Details:</h3></li>
+            <li><strong>Date:</strong>         <%= @booking.collection_date.strftime('%B %e, %Y') %></li>
+            <li><strong>Company name:</strong> <%= link_to @booking.listing.title, listing_path(@booking.listing) %></li>
+            <li><strong>Service:</strong>      No data yet</li>
+            <li><strong>Items:</strong>        No data yet</li>
+            <li><strong>Price:</strong>        <%= '%.2f' % @listing.price %></li>
+          </ul>
+        </div>
+        <div class="col">
+          <ul>
+            <li><h3>Need a support?</h3></li>
+            <li><strong>Call us</strong></li>
+            <li>+44 42492 4242</li>
+            <li><strong>Send us an email</strong></li>
+            <li>info@redore.co.uk</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="confirm">
     <img id="image" src="<%= asset_path('confirmation.png') %>" alt="image-1">
     <h2 id="title">You have booked your Recycling!</h2>
@@ -15,6 +40,5 @@
         <% end %>
       </div>
     </div>
-
   </div>
 </div>
