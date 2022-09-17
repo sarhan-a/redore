@@ -18,6 +18,7 @@ class ListingsController < ApplicationController
 
   def show
     add_breadcrumb(@listing.title)
+    @review = Review.new
   end
 
   def new

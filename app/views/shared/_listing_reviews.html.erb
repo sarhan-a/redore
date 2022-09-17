@@ -5,11 +5,10 @@
         <%= @listing.average_rating.round(2) %> (<%= @listing.reviews.count %> customer reviews)
     </h3>
     <div class="d-flex flex-sm-row flex-column align-items-sm-center align-items-stretch justify-content-between">
-      <!-- Prevent owners from reviewing their own listings -->
       <% unless current_user == @listing.user %>
-        <%= link_to new_listing_review_path(@listing), class:"btn btn-outline-primary mb-sm-0 mb-3" do %>
-          <i class="fa-solid fa-pen-to-square me-1"></i>Leave review</a>
-        <% end %>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        <i class="fa-solid fa-pen-to-square me-1"></i>Leave review
+      </button>
       <% end %>
       <!-- TODO Sort by options on the right side -->
       <div class="d-flex align-items-center ms-sm-4">
@@ -59,11 +58,6 @@
       <h3 class="h4 pb-3">
       No reviews yet
       </h3>
-      <% unless current_user == @listing.user %>
-        <%= link_to new_listing_review_path(@listing), class:"btn btn-outline-primary mb-sm-0 mb-3" do %>
-          <i class="fa-solid fa-pen-to-square me-1"></i>Add review</a>
-        <% end %>
-      <% end %>
     </div>
   </div>
 <% end %>
