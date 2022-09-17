@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col">
           <ul>
-            <li><h3>Confirmation Details:</h3></li>
+            <li><h4>Confirmation Details:</h4></li>
             <li><strong>Date:</strong>         <%= @booking.collection_date.strftime('%B %e, %Y') %></li>
             <li><strong>Company name:</strong> <%= link_to @booking.listing.title, listing_path(@booking.listing) %></li>
             <li><strong>Service:</strong>      No data yet</li>
@@ -14,7 +14,7 @@
         </div>
         <div class="col">
           <ul>
-            <li><h3>Need a support?</h3></li>
+            <li><h4>Need a support?</h4></li>
             <li><strong>Call us</strong></li>
             <li>+44 42492 4242</li>
             <li><strong>Send us an email</strong></li>
@@ -26,8 +26,8 @@
   </div>
   <div class="confirm">
     <img id="image" src="<%= asset_path('confirmation.png') %>" alt="image-1">
-    <h2 id="title">You have booked your Recycling!</h2>
-    <h4 id="title">Thank you for helping the mother earth. </h4>
+    <h3 id="title">You have booked your Recycling!</h3>
+    <h3 id="title">Thank you for helping the mother earth. </h3>
     <div class="py-3 confirm-page-bottom">
       <div class="pe-3" style="display: inline-block;">
         <%= link_to root_path do %>
