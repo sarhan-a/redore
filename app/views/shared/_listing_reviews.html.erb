@@ -24,6 +24,7 @@
     </div>
   </div>
   <!-- review -->
+  <% @listing.reviews.each do |review| %>
   <div class="mb-4 pb-4 border-bottom">
     <div class="d-flex justify-content-between mb-3">
       <div class="d-flex align-items-center pe-2">
@@ -35,10 +36,10 @@
           </span>
         </div>
       </div>
-      <span class="text-muted fs-sm">Jan 17, 2021</span>
+      <span class="text-muted fs-sm"><%= review.created_at %></span>
     </div>
     <p>
-      Elementum ut quam tincidunt egestas vitae elit, hendrerit. Ullamcorper nulla amet lobortis elit, nibh condimentum enim.
+      Comments: <%= review.content %>
     </p>
     <div class="d-flex align-items-center">
       <button class="btn-like" type="button">
@@ -52,6 +53,7 @@
       </button>
     </div>
   </div>
+  <% end %>
 <% else %>
   <div class="mb-4 pb-4 border-bottom">
     <div class="d-flex flex-sm-row flex-column align-items-sm-center align-items-stretch justify-content-between">
