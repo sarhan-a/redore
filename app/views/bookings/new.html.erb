@@ -1,57 +1,44 @@
-<div class="container pt-4">
-  <h1><%= @listing.title %></h1>
-  <h3>Confirm your booking</h3>
-    <p>When will you be in? Please select a date to continue booking our service.</p>
-  <div class="row">
-    <div class="col my-auto booking-calendar">
-      <%= form_with model: [@listing, @booking] do |f| %>
-      <%= f.text_field :collection_date,
-      data: {
-      controller: "flatpickr",
-      inline: true,
-      flatpickr_date_format: "Y-m-d",
-      flatpickr_min_date: Time.current,
-      flatpickr_max_date: Time.current + 90.days,
-      flatpickr_disable: @booked_dates
-      },
-      placeholder: "Select a date", style: "display: none;"%>
-    </div>
-    <div class="col-8 booking-user-details">
-      <h3>Collect from</h3>
-      <form class="row g-3">
-      <div class="col-12 pb-2">
-        <i class="fa-solid fa-map"></i>
-        <label for="inputAddress" class="form-label">Street address</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="North, 138 Kingsland Rd Shoreditch Stable">
+<div class="container pt-5">
+  <h1 class="mb-4">Confirm your booking</h1>
+  <p>When will you be in? Please select a date to continue booking our service.</p>
+
+  <%= form_with model: [@listing, @booking] do |f| %>
+    <div class="row review">
+      <div class="col-4">
+        <%= f.text_field :collection_date,
+          data: {
+            controller: "flatpickr",
+            inline: true,
+            flatpickr_date_format: "Y-m-d",
+            flatpickr_min_date: Time.current,
+            flatpickr_max_date: Time.current + 90.days,
+            flatpickr_disable: @booked_dates
+          },
+          placeholder: "Select a date", class: "d-none" %>
       </div>
-      <div class="col-12 pb-2">
-        <i class="fa-sharp fa-solid fa-city"></i>
-        <label for="inputCity" class="form-label">City</label>
-        <input type="text" class="form-control" id="inputCity" placeholder="London">
-      </div>
-      <div class="col-12 pb-2">
-        <i class="fa-solid fa-location-dot"></i>
-        <label for="inputPostcode" class="form-label">Postcode</label>
-        <input type="text" class="form-control" id="inputPostcode" placeholder="E2 8DY">
-      </div>
-      <div class="col-12 pb-2">
-        <i class="fa-solid fa-phone"></i>
-        <label for="inputPhone" class="form-label">Phone number</label>
-        <input type="text" class="form-control" id="inputPhone" placeholder="07779657007">
-      </div>
-      <div class="col-12 pt-3">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck">
-          <label class="form-check-label" for="gridCheck">
-          I agree to the terms and conditions.
-          </label>
+      <div class="col-8 d-flex flex-column">
+        <h3>Collect from</h3>
+        <div class="flex-row">
+          <i class="fa-sharp fa-solid fa-city"></i>
+          <%= f.label :city, 'City', class: "form-label" %>
         </div>
+        <%= f.text_field :address, placeholder: "London", class: "form-control mb-2" %>
+        <div class="flex-row">
+          <i class="fa-solid fa-map"></i>
+          <%= f.label :address, 'Street Address', class: "form-label" %>
+        </div>
+        <%= f.text_field :address, placeholder: "North, 138 Kingsland Rd Shoreditch Stable", class: "form-control mb-2" %>
+        <div class="flex-row">
+          <i class="fa-solid fa-location-arrow"></i>
+          <%= f.label :postcode, 'Postcode', class: "form-label" %>
+        </div>
+        <%= f.text_field :address, placeholder: "E2 8DY", class: "form-control mb-2" %>
+        <div class="flex-row mb-3">
+          <%= f.check_box :agree, {checked: true}, class: "form-control" %>
+          <%= f.label :agree, 'I agree to the terms and conditions.', class: "form-label" %>
+        </div>
+        <%= f.submit "Confirm Booking", class: "btn btn-primary w-100 button my-5" %>
       </div>
     </div>
-      <div class="button py-5 my-3">
-        <%= f.submit "Confirm Booking", class: "btn btn-primary w-100" %>
-      </div>
-      </form>
-  </div>
-<% end %>
+  <% end %>
 </div>
