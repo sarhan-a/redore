@@ -1,5 +1,6 @@
 <div class="container pt-5">
   <h1 class="mb-4">Confirm your booking</h1>
+  <p>When will you be in? Please select a date to continue booking our service.</p>
 
   <%= form_with model: [@listing, @booking] do |f| %>
     <div class="row review">
@@ -21,22 +22,22 @@
           <i class="fa-sharp fa-solid fa-city"></i>
           <%= f.label :city, 'City', class: "form-label" %>
         </div>
-        <%= f.text_field :address, placeholder: "London", class: "form-control mb-3" %>
+        <%= f.text_field :address, placeholder: "London", class: "form-control mb-2" %>
         <div class="flex-row">
           <i class="fa-solid fa-map"></i>
           <%= f.label :address, 'Street Address', class: "form-label" %>
         </div>
-        <%= f.text_field :address, placeholder: "North, 138 Kingsland Rd Shoreditch Stable", class: "form-control mb-3" %>
+        <%= f.text_field :address, placeholder: "North, 138 Kingsland Rd Shoreditch Stable", class: "form-control mb-2" %>
         <div class="flex-row">
-          <i class="fa-solid fa-at"></i>
+          <i class="fa-solid fa-location-arrow"></i>
           <%= f.label :postcode, 'Postcode', class: "form-label" %>
         </div>
-        <%= f.text_field :address, placeholder: "E2 8DY", class: "form-control mb-3" %>
+        <%= f.text_field :address, placeholder: "E2 8DY", class: "form-control mb-2" %>
         <div class="flex-row mb-3">
           <%= f.check_box :agree, {checked: true}, class: "form-control" %>
           <%= f.label :agree, 'I agree to the terms and conditions.', class: "form-label" %>
         </div>
-        <%= f.submit "Confirm Booking", class: "btn btn-primary w-100 button" %>
+        <%= f.submit "Confirm Booking", class: "btn btn-primary w-100 button my-5" %>
       </div>
     </div>
   <% end %>
