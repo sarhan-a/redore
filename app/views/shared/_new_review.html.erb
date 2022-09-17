@@ -1,0 +1,14 @@
+<div class="container text-center">
+  <h1>Your Review</h1>
+  <hr>
+  <%= simple_form_for [@listing, @review] do |f| %>
+  <div class="mt-2">
+    <%= f.label :rating, "Overall rating" %>
+    <%= f.select :rating, options_for_select([("Select"), 1, 2, 3, 4, 5] ) %>
+  </div>
+  <div class="row mt-3">
+    <%= f.input :content, class:"form-control", label: "Comment Here", placeholder:"How was your experience?" %>
+  </div>
+    <%= f.submit "Submit review", class:"btn btn-primary" %>
+  <% end %>
+</div>
