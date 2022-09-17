@@ -1,0 +1,31 @@
+.about-image {
+  width: 100%;
+  height: 100%;
+}
+
+.icon {
+  color: $primary;
+}
+
+.step {
+  display: inline-flex;
+  padding-bottom: 45px;
+}
+.step-number {
+  height: 40px;
+  width: 40px;
+  padding: 5px;
+  text-align: center;
+  border-radius: 50%;
+  display: inline-block;
+  color:#fff;
+  font-size:1.1em;
+  font-weight:600;
+  background-color: $primary;
+  border: 1px solid;
+}
+
+#steps-img {
+  width: 100%;
+  height: 100%;
+}
