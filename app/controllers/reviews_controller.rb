@@ -1,6 +1,5 @@
 class ReviewsController < ApplicationController
   before_action :set_listing
-  before_action :add_index_breadcrumb, only: %i[new]
 
   def new
     @review = Review.new
