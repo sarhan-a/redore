@@ -1,26 +1,24 @@
-<div class="search-box col-xl-8 col-lg-10 order-3 mt-lg-n5 bg-wh">
-<%= search_form_for @q do |f| %>
+<div class="search-box col-xl-8 col-lg-10 order-3 mt-lg-n5">
+<%= search_form_for @q, html: {class:"form-group d-block"} do |f| %>
   <div class="row">
-  <form>
     <div class="inner-form">
       <div class="input-field first-wrap">
-      <i class="fa-solid fa-recycle ml-3"></i>
-      <%= f.search_field :title_or_details_cont, placeholder: "Select Items", style:"padding-inline: 12px;"%>
+        <i class="fa-solid fa-recycle ml-3"></i>
+        <%= f.search_field :title_or_details_cont, placeholder: "Select Items", style:"padding-inline: 12px;"%>
       </div>
       <div class="input-field first-wrap">
-      <i class="fa-solid fa-location-dot d-flex"></i>
-      <%= f.search_field :address_cont, placeholder: "Enter Postcode", style:"padding-inline: 12px;" %>
+        <i class="fa-solid fa-location-dot d-flex"></i>
+        <%= f.search_field :address_cont, placeholder: "Enter Postcode", style:"padding-inline: 12px;" %>
       </div>
       <div class="input-field second-wrap">
-      <%= f.date_field :bookings_collection_date_not_eq, style: "font-size: 16px"%>
+        <%= f.date_field :bookings_collection_date_not_eq, style: "font-size: 18px"%>
       </div>
       <div class="search-button">
-      <%= button_tag type: 'submit', class: " search-icon btn btn-icon btn-primary mw-100 text-white px-3 w-100 w-sm-auto flex-shrink-0" do %>
-      <i class="fa-solid fa-magnifying-glass aria-hidden='true'"></i>
-      <% end %>
+        <%= button_tag type: 'submit', class: " search-icon btn btn-icon btn-primary mw-100 text-white px-3 w-100 w-sm-auto flex-shrink-0" do %>
+        <i class="fa-solid fa-magnifying-glass aria-hidden='true'"></i>
+        <% end %>
       </div>
     </div>
-  </form>
   </div>
 <% end %>
 </div>
