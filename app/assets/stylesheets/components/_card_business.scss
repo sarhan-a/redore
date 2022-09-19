@@ -1,0 +1,25 @@
+.card-owner {
+  display: flex;
+  border-radius: 0.75rem;
+  border: 1px solid #efecf3;
+}
+
+.card-owner .footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card-owner img {
+  min-height: 150;
+  max-height: 250;
+}
+
+.card-body {
+  margin-bottom: 0;
+  padding-block: 0.75rem;
+  padding-inline: 1rem;
+}
+
+.card-body p {
+  padding-bottom: 1rem;
+}

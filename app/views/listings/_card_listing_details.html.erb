@@ -1,0 +1,88 @@
+ <!-- Sidebar with details-->
+  <aside class="col-lg-5">
+    <div class="ps-lg-5">
+      <div class="d-flex align-items-center justify-content-between mb-3">
+        <div><span class="badge bg-success me-2 mb-2">Verified</span>
+        <% if @listing.reviews.size.positive? && @listing.average_rating > 4 %>
+          <span class="badge bg-primary me-2 mb-2">Top Rated</span>
+        <% elsif @listing.created_at > 3.days.ago.beginning_of_day %>
+          <span class="badge bg-warning me-2 mb-2">New</span>
+        <% end %>
+        </div>
+        <div class="text-nowrap">
+          <button class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle ms-2 mb-2" type="button" data-bs-toggle="tooltip" title="" data-bs-original-title="Add to Wishlist" aria-label="Add to Wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+          <div class="dropdown d-inline-block" data-bs-toggle="tooltip" title="" data-bs-original-title="Share">
+            <button class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle ms-2 mb-2" type="button" data-bs-toggle="dropdown">
+              <i class="fa-solid fa-share"></i>
+            </button>
+            <div class="dropdown-menu dropdown-menu-end my-1">
+              <button class="dropdown-item" type="button"><i class="fa-brands fa-facebook-f me-2"></i>Facebook</button> <!--add later opacity-75 -->
+              <button class="dropdown-item" type="button"><i class="fa-brands fa-twitter me-2"></i>Twitter</button> <!--add later opacity-75 -->
+              <button class="dropdown-item" type="button"><i class="fa-brands fa-instagram me-2"></i>Instagram</button> <!--add later opacity-75 -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Listing details-->
+      <h3 class="h3 mb-2">Collections of bulky waste items</h3>
+      <h2 class="h5 mb-4 pb-2">£<%= '%.2f' % @listing.price %><span class="d-inline-block ms-1 fs-base fw-normal">collection fee</span></h2>
+      <div class="card border-0 bg-secondary mb-4">
+        <div class="card-body">
+          <h5 class="mb-0 pb-3">Details</h5>
+          <ul class="list-unstyled mt-n2 mb-0">
+            <li class="mt-2 mb-0"><b>Areas: </b>Recycling, Donating</li>
+            <li class="mt-2 mb-0"><b>Items: </b>Furniture, E-Waste, White-Goods</li>
+            <li class="mt-2 mb-0"><b>Fleet: </b>Electric Vans</li>
+            <li class="mt-2 mb-0"><b>Established: </b>2015</li>
+            <li class="mt-2 mb-0"><b>Collection days </b>Mon-Sat</li>
+            <li class="mt-2 mb-0"><b>Same day collections: </b>Yes, must book before 12PM</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Prevent owners from booking their own listings -->
+      <% unless current_user == @listing.user %>
+        <%= link_to 'Book now!', new_listing_booking_path(@listing), class:"btn btn-lg btn-primary w-100 mb-3" %></li>
+      <% end %>
+      <!-- All User actions -->
+      <div class="d-flex align-items-center justify-content-around mb-2">
+        <%= link_to 'Choose another', listings_path, class:"d-inline-block, text-decoration-none" %>
+        <%= link_to 'Back to home', root_path, class:"d-inline-block, text-decoration-none" %>
+      </div>
+      <a class="d-inline-block text-decoration-none" href="#">
+          <i class="fa-regular fa-circle-question me-2 mt-n1 align-middle"></i>Frequently asked questions</a>
+      <!-- Owner specific actions -->
+      <% if current_user == @listing.user %>
+        <%= link_to 'Show bookings', listing_bookings_path(@listing), class:"btn btn-lg btn-primary w-100 mb-3" %>
+        <div class="d-flex align-items-center justify-content-between mb-3">
+          <%= link_to 'Edit', edit_listing_path, class:"btn btn-warning w-50" %>
+          <%= link_to 'Delete', listing_path, class:"btn btn-danger w-50", data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %>
+        </div>
+      <% end %>
+      <!-- Features-->
+      <div class="card border-0 bg-secondary mb-4">
+        <div class="card-body">
+          <h5>Features</h5>
+          <ul class="list-unstyled row row-cols-md-2 row-cols-1 gy-2 mb-0 text-nowrap">
+            <li class="col"><i class="fa-solid fa-recycle mt-n1 me-2 fs-lg align-middle"></i>Recycle</li>
+            <li class="col"><i class="fa-solid fa-hand-holding-heart mt-n1 me-2 fs-lg align-middle"></i>Donate</li>
+            <li class="col"><i class="fa-solid fa-screwdriver-wrench mt-n1 me-2 fs-lg align-middle"></i>Restore</li>
+            <li class="col"><i class="fa-solid fa-couch mt-n1 me-2 fs-lg align-middle"></i>Furniture</li>
+            <li class="col"><i class="fa-solid fa-computer mt-n1 me-2 fs-lg align-middle"></i>E-Waste</li>
+            <li class="col"><i class="fa-solid fa-plug mt-n1 me-2 fs-lg align-middle"></i>Electronics</li>
+            <li class="col"><i class="fa-solid fa-bolt mt-n1 me-2 fs-lg align-middle"></i>White Goods</li>
+            <li class="col"><i class="fa-solid fa-recycle mt-n1 me-2 fs-lg align-middle"></i>Van size</li>
+            <li class="col"><i class="fa-solid fa-recycle mt-n1 me-2 fs-lg align-middle"></i>Eco Green</li>
+            <li class="col"><i class="fa-solid fa-truck-fast mt-n1 me-2 fs-lg align-middle"></i>Fast collections</li>
+          </ul>
+        </div>
+      </div>
+      <!-- Post meta-->
+      <ul class="d-flex mb-4 list-unstyled fs-sm">
+        <li class="me-3 pe-3 border-end">Published: <b><%= @listing.created_at.strftime('%e %b  %Y') %></b></li>
+        <li class="me-3 pe-3 border-end">Ad number: <b><%= @listing.id %></b></li>
+        <li class="me-3 pe-3">Views: <b>48</b></li>
+      </ul>
+    </div>
+  </aside>
