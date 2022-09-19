@@ -1,0 +1,28 @@
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 0;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  list-style: none;
+  background-color: transparent;
+}
+
+.breadcrumb-item.active{
+  color: $orange;
+}
+
+.breadcrumb a {
+  transition: color .2s ease-in-out;
+}
+
+.breadcrumb .breadcrumb-item {
+  > a {
+    color: #9691a4;
+    text-decoration: none;
+
+    &:hover {
+      color: $mauve;
+    }
+  }
+}
