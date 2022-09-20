@@ -1,0 +1,23 @@
+.forms {
+  box-shadow: 0 0 15px rgba(65, 65, 65, 0.2);
+  border-radius: 0.75em;
+  padding-top: 30px;
+  padding-inline: 30px;
+  input {
+    margin-bottom: 20px;
+  }
+  label {
+    text-decoration: none;
+    font-weight: 100;
+    color: $mauve;
+  }
+
+  input[type="password"] {
+    margin-bottom: 0px;
+  }
+}
+.links {
+  a {
+    text-decoration: none;
+  }
+}
