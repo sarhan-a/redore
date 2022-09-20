@@ -1,2 +1,16 @@
-<h4><%= listing.title %></h4>
+<div class="map-popup">
+<%= cl_image_tag listing.photos.first.key, class:"img-fluid rounded", height: 150, width: 200, crop: :fill unless listing.photos.empty?%>
+</div>
+<h6><%= listing.title %></h6>
 <p><%= listing.address %></p>
+<% if listing.reviews.present?%>
+  <div class="map-footer">
+    <span class="avg-rating-map text-muted me-1 "><%= listing.average_rating.round(1) %></span>
+    <div class="all-stars-map me-1">
+      <%= icon('fa-solid', 'star', class:'text-warning') * listing.average_rating.round(1) %>
+    </div>
+    <span class="text-muted map-rev-count">(<%= listing.reviews.count %>)</span>
+  </div>
+<% else %>
+  <p>No reviews</p>
+<% end %>
