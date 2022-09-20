@@ -1,18 +1,12 @@
-<div class="container">
-
-<br>
-<br>
-<br>
-<br>
-
-<div class="index-top pt-3 pb-5">
-  <h2> We found <%= @listings.count %> businesses that can help you</h2>
-</div>
+<div class="container pt-2">
+  <div class="index-top pt-5 pb-5">
+    <h2> We found <%= @listings.count %> businesses that can help you</h2>
+  </div>
 
 <%= render "shared/filter" %>
 
 <div>
-<p> Sort by: <%= sort_link(@q, :price, "Price", default_order: :asc) %> </p>
+  <p> Sort by: <%= sort_link(@q, :price, "Price", default_order: :asc) %> </p>
 </div>
 <br>
   <div class="container">
@@ -23,7 +17,7 @@
         <div class="card-product mb-3">
           <div class="row g-0">
             <div class="col-md-4">
-              <%= cl_image_tag listing.photos.first.key, class:"img-fluid rounded-start", crop: :thumb unless listing.photos.empty?%>
+              <%= cl_image_tag listing.photos.first.key, class:"img-fluid rounded-start", height: 248, width: 284, crop: :fill unless listing.photos.empty?%>
             </div>
           <div class="col-md-8">
             <div class="card-product-body">
@@ -35,8 +29,13 @@
                 <p><%= listing.details.truncate(200) %></p>
               </div>
               <div class="price">
-                <p><i class="fa-solid fa-money-bill"></i> <%= listing.price %>.00</p>
-                <p><%=listing.average_rating %>⭐ (<%= listing.reviews.count%> reviews )</p>
+                <p><i class="fa-solid fa-money-bill text-muted"></i> <strong>£</strong> <%= listing.price %>.00</p>
+                <p><i class="fa-solid fa-star mb-1 me-0 lead align-middle text-warning"></i>
+                <% if listing.reviews.present? %>
+                  <%= listing.average_rating.round(1) %> (<%= listing.reviews.count %> reviews)</p>
+                <% else %>
+                  <%= listing.reviews.count %> reviews
+                <% end %>
               </div>
             </div>
           </div>
