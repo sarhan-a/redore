@@ -1,9 +1,12 @@
 <div class="container pt-2">
-  <div class="index-top pt-5 pb-5">
-    <h2> We found <%= @listings.count %> businesses that can help you</h2>
+  <div class="bg-image pb-5">
+  <img id="search-hero" src="<%= asset_path('search.png') %>" alt="search">
   </div>
 
+<div class="found">
+    <h2 class="pb-3"> We found <%= @listings.count %> businesses that can help you</h2>
 <%= render "shared/filter" %>
+</div>
 
 <div>
   <p> Sort by: <%= sort_link(@q, :price, "Price", default_order: :asc) %> </p>
