@@ -4,7 +4,7 @@
 }
 
 .card-product{
-  border-radius: 5px;
+  border-radius: .75rem;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 
   a{
@@ -20,10 +20,16 @@
       text-align: center;
       h3{
         font-weight: bolder;
-        color: $primary;
+        color: $mauve;
+
+        &:hover,
+        &:focus {
+          color: $primary;
+          transition: color .2s ease-in-out;
+        }
       }
-      color: rgb(10, 10, 10);
-      border-bottom: 0.7px solid black;
+      color: $mauve;
+      border-bottom: 0.7px solid rgba(69, 64, 86, 0.2);
     }
 
     .price{
