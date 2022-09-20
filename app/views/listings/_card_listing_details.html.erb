@@ -29,7 +29,7 @@
       <h3 class="h3 mb-2">Collections of bulky waste items</h3>
       <h2 class="h5 mb-4 pb-2">£<%= '%.2f' % @listing.price %><span class="d-inline-block ms-1 fs-base fw-normal">collection fee</span></h2>
       <div class="card border-0 bg-secondary mb-4">
-        <div class="card-body">
+        <div class="card-body bg-white border">
           <h5 class="mb-0 pb-3">Details</h5>
           <ul class="list-unstyled mt-n2 mb-0">
             <li class="mt-2 mb-0"><b>Areas: </b>Recycling, Donating</li>
@@ -48,9 +48,8 @@
       <!-- All User actions -->
       <div class="d-flex align-items-center justify-content-around mb-2">
         <%= link_to 'Choose another', listings_path, class:"d-inline-block, text-decoration-none" %>
-        <%= link_to 'Back to home', root_path, class:"d-inline-block, text-decoration-none" %>
       </div>
-      <a class="d-inline-block text-decoration-none" href="#">
+      <a class="d-inline-block text-decoration-none pt-3 pb-2" href="#">
           <i class="fa-regular fa-circle-question me-2 mt-n1 align-middle"></i>Frequently asked questions</a>
       <!-- Owner specific actions -->
       <% if current_user == @listing.user %>
@@ -61,7 +60,7 @@
         </div>
       <% end %>
       <!-- Features-->
-      <div class="card border-0 bg-secondary mb-4">
+      <div class="card  border bg-white">
         <div class="card-body">
           <h5>Features</h5>
           <ul class="list-unstyled row row-cols-md-2 row-cols-1 gy-2 mb-0 text-nowrap">
@@ -79,7 +78,7 @@
         </div>
       </div>
       <!-- Post meta-->
-      <ul class="d-flex mb-4 list-unstyled fs-sm">
+      <ul class="d-flex mb-4 list-unstyled fs-sm pt-3">
         <li class="me-3 pe-3 border-end">Published: <b><%= @listing.created_at.strftime('%e %b  %Y') %></b></li>
         <li class="me-3 pe-3 border-end">Ad number: <b><%= @listing.id %></b></li>
         <li class="me-3 pe-3">Views: <b>48</b></li>
