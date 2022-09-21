@@ -1,0 +1,47 @@
+.mapboxgl-popup-content {
+  padding: 0;
+  border-radius: 0.75rem;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.mapboxgl-popup-close-button {
+  color: white;
+  border: none;
+  font-size: x-large;
+  height: 32px;
+  width: 32px;
+  padding: 0;
+  margin-top: 2px;
+  margin-right: 2px;
+  border-radius: 50%;
+  outline: none;
+  &:hover{
+    color: $orange;
+    background-color: rgba($color: #000000, $alpha: 0.09)
+  }
+}
+
+.map-pop-info {
+  text-align:center;
+  padding-top:0.25rem;
+  color: $mauve;
+}
+
+.map-pop-info p {
+  margin-bottom: 0;
+}
+
+.map-pop-info h6 {
+  margin-bottom: 0.25rem;
+}
+
+.map-pop-footer {
+  display:flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.popup-window{
+  max-width: 100%;
+}
