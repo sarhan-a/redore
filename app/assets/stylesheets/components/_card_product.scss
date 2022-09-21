@@ -32,12 +32,14 @@
       border-bottom: 0.7px solid rgba(69, 64, 86, 0.2);
     }
 
-    .price{
+    .card-product-footer{
       font-size: 18px;
+      font-weight: 500;
+      color: $mauve;
       padding-inline: 20px;
       display: flex;
       flex-direction: row;
-      justify-content: space-between ;
+      justify-content: space-between;
     }
 
     .details{

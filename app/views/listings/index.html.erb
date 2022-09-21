@@ -1,55 +1,52 @@
 <div class="container pt-2">
   <div class="bg-image pb-5">
-  <img id="search-hero" src="<%= asset_path('search.png') %>" alt="search">
+    <img id="search-hero" src="<%= asset_path('search.png') %>" alt="search">
   </div>
 
-<div class="found">
+  <div class="found">
     <h2 class="pb-3"> We found <%= @listings.count %> businesses that can help you</h2>
-<%= render "shared/filter" %>
-</div>
+    <%= render "shared/filter" %>
+  </div>
 
-<div>
-  <p> Sort by: <%= sort_link(@q, :price, "Price", default_order: :asc) %> </p>
-</div>
-<br>
-  <div class="container">
-    <div class="row">
-      <div class="col-8">
-        <% @listings.each do |listing| %>
-        <%= link_to listing do %>
-        <div class="card-product mb-3">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <%= cl_image_tag listing.photos.first.key, class:"img-fluid rounded-start", height: 248, width: 284, crop: :fill unless listing.photos.empty?%>
+  <div class="pb-3">
+    <p> Sort by: <%= sort_link(@q, :price, "Price", default_order: :asc) %> </p>
+  </div>
+  <div class="row">
+    <div class="col-8">
+      <% @listings.each do |listing| %>
+      <%= link_to listing do %>
+      <div class="card-product mb-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <%= cl_image_tag listing.photos.first.key, class:"img-fluid rounded-start", height: 248, width: 284, crop: :fill unless listing.photos.empty?%>
+          </div>
+        <div class="col-md-8">
+          <div class="card-product-body">
+            <div class="title">
+              <h3><%= listing.title %></h3>
+              <p><%= listing.address %></p>
             </div>
-          <div class="col-md-8">
-            <div class="card-product-body">
-              <div class="title">
-                <h3><%= listing.title %></h3>
-                <p><%= listing.address %></p>
-              </div>
-              <div class="details">
-                <p><%= listing.details.truncate(200) %></p>
-              </div>
-              <div class="price">
-                <p><i class="fa-solid fa-money-bill text-muted"></i> <strong>£</strong> <%= listing.price %>.00</p>
-                <p><i class="fa-solid fa-star mb-1 me-0 lead align-middle text-warning"></i>
-                <% if listing.reviews.present? %>
-                  <%= listing.average_rating.round(1) %> (<%= listing.reviews.count %> reviews)</p>
-                <% else %>
-                  <%= listing.reviews.count %> reviews
-                <% end %>
-              </div>
+            <div class="details">
+              <p><%= listing.details.truncate(200) %></p>
+            </div>
+            <div class="card-product-footer">
+              <p>£<%= listing.price %>.00</p>
+              <p><i class="fa-solid fa-star mb-1 me-0 lead align-middle text-warning"></i>
+              <% if listing.reviews.present? %>
+                <%= listing.average_rating.round(1) %> (<%= listing.reviews.count %> reviews)</p>
+              <% else %>
+                <%= listing.reviews.count %> reviews
+              <% end %>
             </div>
           </div>
-          </div>
-        <% end %>
         </div>
-        <% end %>
+        </div>
+      <% end %>
       </div>
-      <div class="col-4">
-      <%= render "shared/map" %>
-      </div>
+      <% end %>
+    </div>
+    <div class="col-4">
+    <%= render "shared/map" %>
     </div>
   </div>
 </div>
