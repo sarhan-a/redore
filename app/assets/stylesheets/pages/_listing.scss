@@ -4,3 +4,17 @@
   margin-right: auto;
   width: 80%;
 }
+
+// listing show right side cards. n.b these must be DRY refactored in one component
+
+.card-details{
+  display: flex;
+  border: 1px solid #efecf3;
+  padding: 1.25rem;
+  border-radius: 0.75rem;
+  background-color: rgb(232, 248, 237);
+}
+
+.fa-recycle {
+  color: black;
+}
