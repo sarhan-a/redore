@@ -4,7 +4,7 @@
     <% if listing.photos.attached? %>
       <% listing.photos.each_with_index do |photo, index| %>
         <div class="carousel-item <%= "active" if index == 0 %>" data-bs-interval="3000">
-          <%= cl_image_tag photo.key, class: "d-block w-100 rounded-4" %>
+          <%= cl_image_tag photo.key, height: 421, width: 746, crop: :fill, class: "d-block w-100 rounded-4" %>
         </div>
       <% end %>
     <% end %>
@@ -27,7 +27,7 @@
     <% if listing.photos.attached? %>
       <% listing.photos.each_with_index do |photo, index| %>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<%= index %>" class="<%= "active" if index == 0 %>" aria-current="true" aria-label="Slide <%= index + 1 %>" style="width: 100px;">
-          <%= cl_image_tag photo.key, class: "d-block w-100 img-fluid rounded-4" %>
+          <%= cl_image_tag photo.key, height: 75, width: 100, crop: :fill, class: "d-block w-100 img-fluid rounded-4" %>
         </button>
       <% end %>
     <% end %>
