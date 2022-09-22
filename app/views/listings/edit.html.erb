@@ -1,8 +1,10 @@
-<%= simple_form_for @listing do |f| %>
-<%= f.input :title %>
-<%= f.input :address %>
-<%= f.input :details %>
-<%= f.input :price %>
-<%= f.input :photos, as: :file, input_html: { multiple: true } %>
-<%= f.submit class: 'btn btn-primary' %>
-<% end %>
+<div class="container col-8 mt-5 text-center">
+  <%= simple_form_for @listing do |f| %>
+    <%= f.input :title %>
+    <%= f.input :address %>
+    <%= f.input :details %>
+    <%= f.input :price %>
+    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= f.submit class: 'btn btn-primary mt-5' %>
+  <% end %>
+</div>
