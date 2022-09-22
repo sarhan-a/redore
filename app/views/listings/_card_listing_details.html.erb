@@ -28,15 +28,15 @@
       <!-- Listing details-->
       <h3 class="h3 mb-2">Collections of bulky waste items</h3>
       <h2 class="h5 mb-4 pb-2">£<%= '%.2f' % @listing.price %><span class="d-inline-block ms-1 fs-base fw-normal">collection fee</span></h2>
-      <div class="card border-0 bg-secondary mb-4">
-        <div class="card-body bg-white border">
+      <div class="card-details mb-4">
+        <div class="card-details-body">
           <h5 class="mb-0 pb-3">Details</h5>
           <ul class="list-unstyled mt-n2 mb-0">
-            <li class="mt-2 mb-0"><b>Areas: </b>Recycling, Donating</li>
-            <li class="mt-2 mb-0"><b>Items: </b>Furniture, E-Waste, White-Goods</li>
+            <li class="mt-2 mb-0"><b>Main Focus: </b>Recycling, Donating, Refurbishing</li>
+            <li class="mt-2 mb-0"><b>We collect: </b>Furniture, E-Waste, White-Goods and more</li>
             <li class="mt-2 mb-0"><b>Fleet: </b>Electric Vans</li>
             <li class="mt-2 mb-0"><b>Established: </b>2015</li>
-            <li class="mt-2 mb-0"><b>Collection days </b>Mon-Sat</li>
+            <li class="mt-2 mb-0"><b>Collection days: </b>Mon-Sat</li>
             <li class="mt-2 mb-0"><b>Same day collections: </b>Yes, must book before 12PM</li>
           </ul>
         </div>
@@ -49,7 +49,7 @@
       <div class="d-flex align-items-center justify-content-around mb-2">
         <%= link_to 'Choose another', listings_path, class:"d-inline-block, text-decoration-none" %>
       </div>
-      <a class="d-inline-block text-decoration-none pt-3 pb-2" href="#">
+      <a class="d-inline-block text-decoration-none pt-2 pb-2" href="#">
           <i class="fa-regular fa-circle-question me-2 mt-n1 align-middle"></i>Frequently asked questions</a>
       <!-- Owner specific actions -->
       <% if current_user == @listing.user %>
@@ -60,20 +60,20 @@
         </div>
       <% end %>
       <!-- Features-->
-      <div class="card border bg-white">
-        <div class="card-body">
+      <div class="card-details">
+        <div class="card-features-body">
           <h5>Features</h5>
           <ul class="list-unstyled row row-cols-md-2 row-cols-1 gy-2 mb-0 text-nowrap">
-            <li class="col"><i class="fa-solid fa-recycle mt-n1 me-2 fs-lg align-middle"></i>Recycle</li>
-            <li class="col"><i class="fa-solid fa-hand-holding-heart mt-n1 me-2 fs-lg align-middle"></i>Donate</li>
-            <li class="col"><i class="fa-solid fa-screwdriver-wrench mt-n1 me-2 fs-lg align-middle"></i>Restore</li>
-            <li class="col"><i class="fa-solid fa-couch mt-n1 me-2 fs-lg align-middle"></i>Furniture</li>
-            <li class="col"><i class="fa-solid fa-computer mt-n1 me-2 fs-lg align-middle"></i>E-Waste</li>
-            <li class="col"><i class="fa-solid fa-plug mt-n1 me-2 fs-lg align-middle"></i>Electronics</li>
-            <li class="col"><i class="fa-solid fa-bolt mt-n1 me-2 fs-lg align-middle"></i>White Goods</li>
-            <li class="col"><i class="fa-solid fa-recycle mt-n1 me-2 fs-lg align-middle"></i>Van size</li>
-            <li class="col"><i class="fa-solid fa-recycle mt-n1 me-2 fs-lg align-middle"></i>Eco Green</li>
-            <li class="col"><i class="fa-solid fa-truck-fast mt-n1 me-2 fs-lg align-middle"></i>Fast collections</li>
+            <li><i class="fa-solid fa-recycle mt-n1 me-2 fs-lg align-middle"></i>Recycle</li>
+            <li><i class="fa-solid fa-hand-holding-heart mt-n1 me-2 fs-lg align-middle"></i>Donate</li>
+            <li><i class="fa-solid fa-screwdriver-wrench mt-n1 me-2 fs-lg align-middle"></i>Restore</li>
+            <li><i class="fa-solid fa-couch mt-n1 me-2 fs-lg align-middle"></i>Furniture</li>
+            <li><i class="fa-solid fa-computer mt-n1 me-2 fs-lg align-middle"></i>E-Waste</li>
+            <li><i class="fa-solid fa-plug mt-n1 me-2 fs-lg align-middle"></i>Electronics</li>
+            <li><i class="fa-solid fa-bolt mt-n1 me-2 fs-lg align-middle"></i>White Goods</li>
+            <li><i class="fa-solid fa-truck-front mt-n1 me-2 fs-lg align-middle"></i>Large Vans</li>
+            <li><i class="fa-solid fa-people-carry-box mt-n1 me-2 fs-lg align-middle"></i>Careful Handling</li>
+            <li><i class="fa-solid fa-truck-fast mt-n1 me-2 fs-lg align-middle"></i>Fast collections</li>
           </ul>
         </div>
       </div>

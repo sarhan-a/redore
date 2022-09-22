@@ -2,6 +2,7 @@
   display: flex;
   border-radius: 0.75rem;
   border: 1px solid #efecf3;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
 .card-owner .footer {
@@ -17,9 +18,10 @@
 .card-body {
   margin-bottom: 0;
   padding-block: 0.75rem;
-  padding-inline: 1rem;
+  padding-inline: 1.25rem;
 }
 
 .card-body p {
-  padding-bottom: 1rem;
+  margin-top: 0.25rem;
+  padding-bottom: 0.75rem;
 }
