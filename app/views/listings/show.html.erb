@@ -23,9 +23,7 @@
     <div class="col-lg-7">
       <div class="d-flex flex-column">
         <!-- Insert Carousel with slides here-->
-        <% @listing.photos.each do |photo| %>
-          <%= cl_image_tag photo.key, height: 421, width: 746, crop: :fill  %>
-        <% end %>
+        <%= render "carousel", listing: @listing %>
       </div>
       <!-- Overview-->
       <h2 class="h4 mt-2">Overview</h2>
