@@ -2,6 +2,8 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   has_many :listings, dependent: :destroy
   has_many :reviews, dependent: :destroy
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_listings, through: :favorites, source: :favorited, source_type: 'Listing'
   has_one_attached :avatar, dependent: :destroy
 
   validates_presence_of :first_name, :last_name
