@@ -14,5 +14,6 @@ Rails.application.routes.draw do
     resources :collection_dates, only: %i[new create show index]
     resources :reviews, only: %i[new create]
   end
+  resources :favorite_listings, only: %i[create destroy]
   get '*path', to: redirect("/error")
 end
