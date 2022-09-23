@@ -5,7 +5,7 @@ class FavoriteListingsController < ApplicationController
     if Favorite.create(favorited: @listing, user: current_user)
       redirect_to @listing, notice: 'Listing added to favourites'
     else
-      redirect_to @listing, alert: 'Something went wrong...*sad panda*'
+      redirect_to @listing, alert: 'Something went wrong...'
     end
   end
 
