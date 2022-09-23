@@ -49,8 +49,8 @@
       <div class="d-flex align-items-center justify-content-around mb-2">
         <%= link_to 'Choose another', listings_path, class:"d-inline-block, text-decoration-none" %>
       </div>
-      <a class="d-inline-block text-decoration-none pt-2 pb-2" href="#">
-          <i class="fa-regular fa-circle-question me-2 mt-n1 align-middle"></i>Frequently asked questions</a>
+      <a class="d-flex align-items-center justify-content-around text-decoration-none pt-2 pb-2" href="#">
+          <span><i class="fa-regular fa-circle-question me-2 mt-n1 align-middle"></i>Frequently asked questions</a></span>
       <!-- Owner specific actions -->
       <% if current_user == @listing.user %>
         <%= link_to 'Show bookings', listing_bookings_path(@listing), class:"btn btn-lg btn-primary w-100 mb-3" %>
