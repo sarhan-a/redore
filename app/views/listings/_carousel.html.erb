@@ -27,7 +27,7 @@
     <% if listing.photos.attached? %>
       <% listing.photos.each_with_index do |photo, index| %>
         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<%= index %>" class="<%= "active" if index == 0 %>" aria-current="true" aria-label="Slide <%= index + 1 %>" style="width: 100px;">
-          <%= cl_image_tag photo.key, height: 75, width: 100, crop: :fill, class: "d-block w-100 img-fluid rounded-4" %>
+          <%= cl_image_tag photo.key, height: 75, width: 100, crop: :fill, class: "thumb d-block w-100 img-fluid rounded-3" %>
         </button>
       <% end %>
     <% end %>

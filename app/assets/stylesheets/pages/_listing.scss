@@ -20,3 +20,7 @@
   height: 18px;
   width: 18px;
 }
+
+.carousel-indicators > .active .thumb {
+  border: 1.25px solid $orange;
+  }
