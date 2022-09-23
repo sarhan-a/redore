@@ -6,7 +6,7 @@ import Typed from "typed.js";
 export default class extends Controller {
   connect() {
     const typed = new Typed(".type", {
-      strings: ["Recycle", "Donate", "Restore"],
+      strings: ["recycle", "donate", "restore"],
       typeSpeed: 120,
       backSpeed: 80,
       loop: true,
