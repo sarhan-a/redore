@@ -4,7 +4,14 @@
   </div>
 
   <div class="found">
-    <h2 class="pb-3"> We found <%= @listings.count %> businesses that can help you</h2>
+    <% if @listings.count > 1 %>
+      <h2 class="pb-3"> We found <%= @listings.count %> businesses that can help you!</h2>
+    <% elsif @listings.size == 1 %>
+      <h2 class="pb-3"> We found <%= @listings.count %> business that can help you!</h2>
+    <% else %>
+      <h2 class="pb-3"> No results this time, why not try a nearby postcode instead?</h2>
+    <% end %>
+
     <%= render "shared/filter" %>
   </div>
 
