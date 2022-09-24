@@ -10,14 +10,16 @@
         <% end %>
         </div>
         <div class="text-nowrap">
+          <% if user_signed_in? %>
           <% unless current_user.favorite_listings.exists?(id: @listing.id) %>
             <%= link_to favorite_listings_path(listing_id: @listing), class:"empty-heart btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle ms-2 mb-2", data: { 'turbo-method' => :post } do %>
               <i class="fa-regular fa-heart"></i>
             <% end %>
           <% else %>
-            <%= button_to favorite_listing_path(@listing), class:"full-heart btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle ms-2 mb-2", method: :delete do %>
+            <%= button_to favorite_listing_path(@listing), class:"full-heart btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle ms-2 mb-2", data: { 'turbo-method' => :delete } do %>
               <i class="fa-solid fa-heart"></i>
             <% end %>
+          <% end %>
           <% end %>
           <div class="dropdown d-inline-block" data-bs-toggle="tooltip" title="Share" data-bs-placement="top" data-bs-original-title="">
             <button class="btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle ms-2 mb-2" type="button" data-bs-toggle="dropdown">
