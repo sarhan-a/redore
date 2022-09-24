@@ -16,7 +16,7 @@
               <i class="fa-regular fa-heart"></i>
             <% end %>
           <% else %>
-            <%= button_to favorite_listing_path(@listing), class:"full-heart btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle ms-2 mb-2", data: { 'turbo-method' => :delete } do %>
+            <%= button_to favorite_listing_path(@listing), class:"full-heart btn btn-icon btn-light-primary btn-xs shadow-sm rounded-circle ms-2 mb-2" do %>
               <i class="fa-solid fa-heart"></i>
             <% end %>
           <% end %>
