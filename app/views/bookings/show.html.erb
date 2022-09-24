@@ -7,17 +7,17 @@
             <li><h4>Confirmation Details:</h4></li>
             <li><strong>Date:</strong>         <%= @booking.collection_date.strftime('%B %e, %Y') %></li>
             <li><strong>Company name:</strong> <%= link_to @booking.listing.title, listing_path(@booking.listing) %></li>
-            <li><strong>Service:</strong>      No data yet</li>
-            <li><strong>Items:</strong>        No data yet</li>
+            <li><strong>Service:</strong>      Urgent collection for recycle or donation</li>
+            <li><strong>Items:</strong>        1 Large Sofa</li>
             <li><strong>Price:</strong>        <%= '%.2f' % @listing.price %></li>
           </ul>
         </div>
         <div class="col">
           <ul>
-            <li><h4>Need a support?</h4></li>
+            <li><h4>Need support?</h4></li>
             <li><strong>Call us</strong></li>
             <li>+44 42492 4242</li>
-            <li><strong>Send us an email</strong></li>
+            <li><strong>Or send us an email</strong></li>
             <li>info@redore.co.uk</li>
           </ul>
         </div>
