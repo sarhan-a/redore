@@ -1,0 +1,44 @@
+.card-profile-large {
+  flex: 1 1 auto;
+  padding: 1.25rem 1.25rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 1px solid #efecf3;
+  border-radius: 0.75rem;
+}
+
+.card-profile-large a:hover{
+  color: $orange;
+}
+
+.card-nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card-nav-link {
+  position: relative;
+  display: block;
+  padding: 1rem 0;
+  transition: color .25s ease-in-out,background-color .25s ease-in-out,box-shadow .25s ease-in-out,border-color .25s ease-in-out;
+  border-top: 1px solid #efecf3;
+  color: #454056;
+  text-decoration: none;
+}
+
+.card-nav-link::before {
+  position: absolute;
+  display: none;
+  top: 0;
+  left: -1.25rem;
+  width: 0.125rem;
+  height: 100%;
+  background-color: #fd5631;
+  content: "";
+}

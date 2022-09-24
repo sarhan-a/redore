@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/help', to: "pages#help"
   get '/live_sustainably', to: "pages#live_sustainably"
   get "error", to: "pages#error"
+  get '/favorites', to: 'favorite_listings#index', as: 'favorites'
 
   resources :listings do
     resources :bookings, only: %i[new create show index]

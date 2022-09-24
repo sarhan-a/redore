@@ -1,5 +1,11 @@
 class FavoriteListingsController < ApplicationController
-  before_action :set_listing
+  before_action :set_listing, only: %i[create destroy]
+  before_action :add_index_breadcrumb, only: %i[index]
+
+  def index
+    @favourites = current_user.favorite_listings
+    add_breadcrumb('Wishlist')
+  end
 
   def create
     if Favorite.create(favorited: @listing, user: current_user)
