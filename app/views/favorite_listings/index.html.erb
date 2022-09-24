@@ -2,15 +2,16 @@
   <div class="row">
     <!-- Sidebar-->
     <aside class="col-lg-4 col-md-5 pe-xl-4 mb-5">
+
     <!-- Account nav-->
-      <div class="card-profile-large border-0 shadow-sm pb-1 me-lg-1">
+      <div class="card-profile-large border-0 shadow pb-1 me-lg-1">
         <div class="d-flex d-md-block d-lg-flex align-items-start pt-lg-2 mb-4">
           <%= image_tag user_avatar(current_user), class: "navbar-avatar-lg", alt:""%>
-          <div class="pt-md-2 pt-lg-0 ps-3 ps-md-0 ps-lg-3">
+          <div class="profile-header pt-md-2 pt-lg-0 ps-3 ps-md-0 ps-lg-3">
             <h4 class="fs-lg mb-0"><%= current_user.first_name + " " + current_user.last_name %></h4>
             <ul class="list-unstyled fs-sm mt-3 mb-0">
-              <li><a class="nav-link fw-normal p-0" href=""><i class="fa-solid fa-phone opacity-60 me-2"></i>(020) 435-0107</a></li>
-              <li><a class="nav-link fw-normal p-0" href="mailto:info@redore.co.uk"><i class="fa-solid fa-envelope opacity-60 me-2"></i><%= current_user.email %></a></li>
+              <li><a class="header-nav-link fw-normal p-0" href=""><i class="fa-solid fa-phone opacity-60 me-2"></i>(020) 435-0107</a></li>
+              <li><a class="header-nav-link fw-normal p-0" href="mailto:info@redore.co.uk"><i class="fa-solid fa-envelope opacity-60 me-2"></i><%= current_user.email %></a></li>
             </ul>
           </div>
         </div>
@@ -58,38 +59,38 @@
       <% if @favourites.empty? %>
         <p>Nothing added yet, listings liked in results will appear here.</p>
       <% else %>
-        <% @favourites.each do |favorite| %>
-        <%= link_to listings_path do %>
 
-        <div class="card-product mb-2">
-          <div class="row g-0">
-            <div class="col-md-4">
-              <%= cl_image_tag favorite.photos.first.key, class:"img-fluid rounded-start", height: 244, width: 285, crop: :fill unless favorite.photos.empty?%>
+      <% @favourites.each do |favorite| %>
+      <%= link_to listings_path do %>
+      <div class="card-product mb-3">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <%= cl_image_tag favorite.photos.first.key, class:"img-fluid rounded-start", height: 248, width: 284, crop: :fill unless favorite.photos.empty?%>
+          </div>
+        <div class="col-md-8">
+          <div class="card-product-body">
+            <div class="title">
+              <h3><%= favorite.title %></h3>
+              <p><%= favorite.address %></p>
             </div>
-          <div class="col-md-8">
-            <div class="card-product-body">
-              <div class="title">
-                <h3><%= favorite.title %></h3>
-                <p><%= favorite.address %></p>
-              </div>
-              <div class="details">
-                <p><%= favorite.details.truncate(200) %></p>
-              </div>
-              <div class="card-product-footer">
-                <p>£<%= favorite.price %>.00</p>
-                <p><i class="fa-solid fa-star mb-1 me-0 lead align-middle text-warning"></i>
-                <% if favorite.reviews.present? %>
-                  <%= favorite.average_rating.round(1) %> (<%= favorite.reviews.count %> reviews)</p>
-                <% else %>
-                  <%= favorite.reviews.count %> reviews
-                <% end %>
-              </div>
+            <div class="details">
+              <p><%= favorite.details.truncate(200) %></p>
+            </div>
+            <div class="card-product-footer">
+              <p>£<%= favorite.price %>.00</p>
+              <p><i class="fa-solid fa-star mb-1 me-0 lead align-middle text-warning"></i>
+              <% if favorite.reviews.present? %>
+                <%= favorite.average_rating.round(1) %> (<%= favorite.reviews.count %> reviews)</p>
+              <% else %>
+                <%= favorite.reviews.count %> reviews
+              <% end %>
             </div>
           </div>
         </div>
-        <% end %>
-        <% end %>
         </div>
+      <% end %>
+      </div>
+      <% end %>
       <% end %>
     </div>
   </div>

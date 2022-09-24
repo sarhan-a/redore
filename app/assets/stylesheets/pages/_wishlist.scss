@@ -12,9 +12,6 @@
   border-radius: 0.75rem;
 }
 
-.card-profile-large a:hover{
-  color: $orange;
-}
 
 .card-nav {
   margin: 0;
@@ -32,13 +29,15 @@
   text-decoration: none;
 }
 
-.card-nav-link::before {
-  position: absolute;
-  display: none;
-  top: 0;
-  left: -1.25rem;
-  width: 0.125rem;
-  height: 100%;
-  background-color: #fd5631;
-  content: "";
+.header-nav-link {
+  color: $orange;
+}
+
+.header-nav-link .fa-phone {
+  color: green;
+e
+
+  .fa-envelope {
+  color: #5c69a5;
+}
 }
