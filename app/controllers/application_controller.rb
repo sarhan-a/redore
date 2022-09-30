@@ -9,8 +9,9 @@ class ApplicationController < ActionController::Base
     # For additional in app/views/devise/registrations/edit.html.erb
     devise_parameter_sanitizer.permit(:account_update, keys: %i[first_name last_name avatar])
   end
+
   def default_url_options
-    { host: ENV["www.redore.co.uk"] || "localhost:3000" }
+    { host: ENV.fetch("www.redore.co.uk", "localhost:3000") }
   end
 
   def add_breadcrumb(label, path = nil, current: false)

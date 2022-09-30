@@ -10,7 +10,7 @@ class ListingsController < ApplicationController
       {
         lat: listing.latitude,
         lng: listing.longitude,
-        info_window: render_to_string(partial: "popup", locals: {listing: listing})
+        info_window: render_to_string(partial: "popup", locals: { listing: })
       }
     end
     add_breadcrumb('Listings')
