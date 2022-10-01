@@ -74,7 +74,7 @@
 
             </div>
             <div class="card-product-footer">
-              <p>Paid £<%= @listing.price %>.00</p>
+              <p>Customer paid £<%= '%.2f' % @listing.price %></p>
               <p><i class="fa-solid fa-star mb-1 me-0 lead align-middle text-warning"></i>
               <% if @listing.reviews.present? %>
                 <%= @listing.average_rating.round(1) %> (<%= @listing.reviews.count %> reviews)</p>

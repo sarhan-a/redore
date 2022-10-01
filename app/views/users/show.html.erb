@@ -6,20 +6,25 @@
     <p class="mt-4" style="font-weight: lighter; font-size: 18px">You have no bookings yet.</p>
     <% else %>
   <div class= "row mt-5 justify-content-center">
-    <% current_user.bookings.each do |b| %>
-      <div class= "card-booking text-center col-3">
-        <%= link_to listing_booking_path(:listing_id) do %>
+    <% current_user.bookings.each do |booking| %>
+      <div class= "card-booking text-center col-3 py-2">
 
-        <div class="listing-title pt-2">
-          <h5><%= b.listing.title %></h5>
+        <%= link_to booking.listing do %>
+
+        <div class="listing-title">
+          <h5><%= booking.listing.title %></h5>
         </div>
 
         <div class="address">
-          <p><%= b.listing.address %></p>
+          <p><%= booking.listing.address %></p>
         </div>
 
         <div class="date">
-          <p>Collection Date: <%= b.collection_date %></p>
+          <p>Collection Date: <%= booking.collection_date %></p>
+        </div>
+
+        <div class="price">
+          <p>Total paid: £<%= '%.2f' % booking.listing.price %></p>
         </div>
 
         <% end %>
