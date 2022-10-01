@@ -56,12 +56,12 @@
         <h1 class="h2 mb-0">Your Wishlist</h1><a class="fw-bold text-decoration-none" href="#"><i class="fa-solid fa-xmark fs-xs mt-n1 me-2"></i>Clear all</a>
       </div>
       <!-- Item-->
-      <% if @favourites.empty? %>
+      <% if @favorites.empty? %>
         <p>Nothing added yet, listings liked in results will appear here.</p>
       <% else %>
 
-      <% @favourites.each do |favorite| %>
-      <%= link_to listings_path do %>
+      <% @favorites.each do |favorite| %>
+      <%= link_to favorite do %>
       <div class="card-product mb-3">
         <div class="row g-0">
           <div class="col-md-4">
