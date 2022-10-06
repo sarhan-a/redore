@@ -9,15 +9,15 @@ class FavoriteListingsController < ApplicationController
 
   def create
     if Favorite.create(favorited: @listing, user: current_user)
-      redirect_to @listing, notice: 'Company saved to your favourites'
+      redirect_to listing_path(@listing), notice: 'Company saved to your favourites'
     else
-      redirect_to @listing, alert: 'Something went wrong...'
+      redirect_to listing_path(@listing), alert: 'Something went wrong...'
     end
   end
 
   def destroy
     Favorite.where(favorited_id: @listing.id, user_id: current_user.id).first.destroy
-    redirect_to @listing, notice: 'Company removed from your favourites'
+    redirect_to listing_path(@listing), notice: 'Company removed from your favourites'
   end
 
   private
