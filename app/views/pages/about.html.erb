@@ -1,19 +1,18 @@
 <div class="container">
   <div class="row align-items-center justify-content-center">
     <!-- Hero content-->
-    <div class="col-lg-4 col-md-5 col-sm-9 order-md-1 order-2 text-md-start text-center">
+    <div class="col-lg-5 col-md-6 col-sm-9 order-md-1 order-2 text-md-start text-center">
       <h2 class="mb-4">About Redore</h2>
       <p class="mb-4 pb-3 fs-lg">
-        We provide a complete service for the service of recycling.
-        We have been operating more than 10 years.
-        We provide a complete service for the service of recycling.
-        We have been operating more than 10 years.
-        We provide a complete service for the service of recycling.
-        We have been operating more than 10 years.
+        Redore stands for Recycle Donate & Restore.<br>
+        This is the platform where you can find the best recycling companies, charities and repair shops in your area to book a collection of your old unwanted item at your chosen date,
+        having the peace of mind that your item will not end up in a landfill.
+        By choosing a company listed on Redore to collect the items you no longer want, you are guaranteed to make the best choice for the environment.<br>
+        This saves you time, money and effort but most importantly,<br>it saves our planet.
       </p>
-      <a href="#" class="btn btn-primary">Contact us</a>
+      <%= mail_to 'info@redore.co.uk', 'Contact Us', class:'btn btn-primary' %>
     </div>
-    <div class="col-lg-7 col-md-6 offset-md-1 col-12 order-md-2 order-1">
+    <div class="col-lg-6 col-md-5 offset-md-1 col-12 order-md-2 order-1">
       <img class="about-image" src="<%= asset_path('aboutus.png') %>" alt="aboutus">
     </div>
   </div>
@@ -26,8 +25,9 @@
       <i class="pb-4 fa-solid fa-recycle fa-2xl icon"></i>
         <div class="d-flex mt-3">
           <div class="">
-            <h3 class="h5 card-title">Recycle everything with Redore</h3>
-            <p class="card-text fs-sm">Our friendly team will remove and recycle your domestic or commercial waste.</p>
+            <h3 class="h5 card-title">Recycle almost anything</h3>
+            <p class="card-text fs-sm">We achieve this by hosting varied selected partners accross UK. Typical items
+              would include: furniture, white-goods, e-waste, bikes and many more </p>
           </div>
         </div>
       </div>
@@ -38,7 +38,8 @@
         <div class="d-flex mt-3">
           <div class="">
             <h3 class="h5 card-title">Fast & affordable</h3>
-            <p class="card-text fs-sm">Our friendly team will remove and recycle your domestic or commercial waste.</p>
+            <p class="card-text fs-sm">Your time and space are precious! Easy to use booking system, same or next day
+              collections if in a rush, and affordable flat-rate prices available</p>
           </div>
         </div>
       </div>
@@ -49,7 +50,8 @@
         <div class="d-flex mt-3">
           <div class="">
             <h3 class="h5 card-title">Environmental friendly</h3>
-            <p class="card-text fs-sm">Our friendly team will remove and recycle your domestic or commercial waste.</p>
+            <p class="card-text fs-sm">Companies hosted on Redore aim to restore, donate or resell items first, they use
+              electric vans for collections and most are carbon neutral</p>
           </div>
         </div>
       </div>
@@ -68,22 +70,25 @@
           <div class="step active">
             <div class="step-progress"><span class="step-number">1</span></div>
             <div class="step-label ms-4">
-              <h3 class="h5 mb-2 pb-1">Choose your recycling</h3>
-              <p class="mb-0">Odio velit, massa augue etiam in parturient volutpat orci. Pulvinar amet, at est ac curabitur mauris, semper cursus metus. Imperdiet sed massa amet at turpis. Dis risus, donec in ac ultricies tempor eu, amet.</p>
+              <h3 class="h5 mb-2 pb-1">Start by searching</h3>
+              <p class="mb-0">Enter the item type, your postcode and the date you would like the item to be collected on.
+                Sort by price and check the reviews of each company. Ready to book?</p>
             </div>
           </div>
           <div class="step active">
             <div class="step-progress"><span class="step-number">2</span></div>
             <div class="step-label ms-4">
-              <h3 class="h5 mb-2 pb-1">See the recycling directly</h3>
-              <p class="mb-0">Id orci senectus dignissim magna nec diam bibendum at. Morbi quis turpis nulla condimentum est elementum. Tristique in accumsan eget vestibulum volutpat pretium. Sed id elit duis turpis diam justo. Dignissim blandit rutrum venenatis.</p>
+              <h3 class="h5 mb-2 pb-1">Book your collection</h3>
+              <p class="mb-0">Select a recycling partner and proceed to book the collection. Payment may be required at
+                this stage or later on collection.</p>
             </div>
           </div>
           <div class="step active">
             <div class="step-progress"><span class="step-number">3</span></div>
               <div class="step-label ms-4">
-                <h3 class="h5 mb-2 pb-1">Easy payment</h3>
-                <p class="mb-0">Ut mattis nascetur aliquam neque velit nunc sed. Morbi congue mauris amet ultrices molestie tellus proin odio diam. Feugiat elit, habitasse egestas egestas id nec potenti. Donec convallis donec tristique mattis et viverra.</p>
+                <h3 class="h5 mb-2 pb-1">Collection day!</h3>
+                <p class="mb-0">The joy! Ready to have more space in your life? Answer the buzzer and welcome the
+                  professional team that will collect your item(s) and give them a new lease of life.</p>
               </div>
           </div>
         </div>
@@ -95,7 +100,7 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title pb-3">
-          <h3 style="text-align: center;">Our Hardworking <span>Team</span></h3>
+          <h3 style="text-align: center;">Meet the <span> Redore Team</span></h3>
           <p style="text-align: center;">Our team brings a wealth of experience from some of the world's most formidable business agencies and startups.</p>
         </div>
 
@@ -176,4 +181,4 @@
         </div>
 
       </div>
-    </section>
+</section>
