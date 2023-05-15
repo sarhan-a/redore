@@ -15,8 +15,8 @@
         <div class="d-flex align-items-start border-bottom px-3 py-1 mb-2" style="width: 16rem;">
           <%= image_tag user_avatar(current_user), class: "avatar-md circle", alt:""%>
           <div class="ps-2">
-            <h6 class="fs-base mb-0"><%= current_user.first_name + " " + current_user.last_name %></h6>
-            <div class="fs-8 py-2"><%= current_user.email %></div>
+            <h6 class="mb-0"><%= current_user.first_name + " " + current_user.last_name %></h6>
+            <div class="fs-xs py-2"><%= current_user.email %></div>
           </div>
         </div>
         <%= link_to edit_user_registration_path, class:"dropdown-item" do %>

@@ -12,27 +12,28 @@
   height: 54px;
   object-fit: cover;
 }
-  .navbar-nav {
-    .nav-link {
-      color: $mauve;
-      font-weight: bold;
 
-      &:hover,
-      &:focus {
-        color: $orange;
-      }
+.navbar-nav {
+  .nav-link {
+    color: $mauve;
+    font-weight: bold;
+
+    &:hover,
+    &:focus {
+      color: $orange;
     }
   }
+}
 
-  .dropdown-menu {
-    .dropdown-item {
-      color: $mauve;
-      font-weight: 400;
+.dropdown-menu {
+  .dropdown-item {
+    color: $mauve;
+    font-weight: 400;
 
-      &:hover,
-      &:focus {
-        color: $orange;
-        background: transparent;
-      }
+    &:hover,
+    &:focus {
+      color: $orange;
+      background: transparent;
     }
   }
+}
