@@ -25,7 +25,20 @@
   }
 }
 
+.dropdown-head {
+  text-decoration: none;
+}
+
+.dropdown-head-eml {
+  font-size: 0.7rem;
+  color: $mauve;
+  box-sizing: content-box;
+  padding-right: 0.5rem;
+}
+
 .dropdown-menu {
+  overflow: hidden;
+
   .dropdown-item {
     color: $mauve;
     font-weight: 400;

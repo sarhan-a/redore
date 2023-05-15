@@ -9,14 +9,14 @@
     <!-- Only if user is signed in -->
     <div class="dropdown d-none d-lg-block order-lg-3 my-n2 me-3">
     <% if user_signed_in? %>
-      <a href="#" class="d-inline-block py-2" data-bs-toggle="dropdown">
+      <a href="#" class=" dropdown-head d-inline-block py-2" data-bs-toggle="dropdown">
         <%= image_tag user_avatar(current_user), class:"avatar-sm circle", alt: current_user.first_name + " " + current_user.last_name%>
       <div class="dropdown-menu dropdown-menu-end">
-        <div class="d-flex align-items-start border-bottom px-3 py-1 mb-2" style="width: 16rem;">
+        <div class="d-flex align-items-start border-bottom px-3 py-1 mb-2" style="min-width: 16rem; max-width: 18rem;">
           <%= image_tag user_avatar(current_user), class: "avatar-md circle", alt:""%>
-          <div class="ps-2">
+          <div class="dropdown-head-name ps-2">
             <h6 class="mb-0"><%= current_user.first_name + " " + current_user.last_name %></h6>
-            <div class="fs-xs py-2"><%= current_user.email %></div>
+            <div class="dropdown-head-eml py-2"><%= current_user.email %></div>
           </div>
         </div>
         <%= link_to edit_user_registration_path, class:"dropdown-item" do %>
