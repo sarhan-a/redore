@@ -4,7 +4,7 @@ class FavoriteListingsController < ApplicationController
 
   def index
     @favorites = current_user.favorite_listings
-    add_breadcrumb('Wishlist')
+    add_breadcrumb('Favourites')
   end
 
   def create
@@ -18,6 +18,11 @@ class FavoriteListingsController < ApplicationController
   def destroy
     Favorite.where(favorited_id: @listing.id, user_id: current_user.id).first.destroy
     redirect_to listing_path(@listing), notice: 'Company removed from your favourites'
+  end
+
+  def clear_all
+    Favorite.where(user_id: current_user.id).destroy_all
+    redirect_to favorite_listings_path, notice: 'All favourites removed!'
   end
 
   private
