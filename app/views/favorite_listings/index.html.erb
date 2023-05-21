@@ -26,24 +26,24 @@
           <% end %>
         <% end %>
 
-        <a class="btn btn-outline-secondary d-block d-md-none w-100 mb-3" href="#account-nav" data-bs-toggle="collapse">
+        <a class="btn btn-outline-secondary d-block d-md-none w-100 mb-3" href="#" data-bs-toggle="collapse">
           <i class="fi-align-justify me-2"></i>Menu</a>
         <div class="collapse d-md-block mt-3" id="account-nav">
-          <div class="card-nav"><a class="card-nav-link" href="real-estate-account-info.html">
+          <div class="card-nav"><a class="card-nav-link" href="#">
             <i class="fa-solid fa-user opacity-60 me-2"></i>Personal Info</a>
-          <a class="card-nav-link" href="real-estate-account-security.html">
+          <a class="card-nav-link" href="#">
             <i class="fa-solid fa-lock opacity-60 me-2"></i>Password &amp; Security</a>
-          <a class="card-nav-link" href="real-estate-account-properties.html">
+          <a class="card-nav-link" href="#">
             <i class="fa-solid fa-list opacity-60 me-2"></i>My Bookings</a>
-          <a class="card-nav-link active" href="real-estate-account-wishlist.html">
+          <a class="card-nav-link active" href="#">
             <i class="fa-solid fa-heart opacity-60 me-2"></i>Wishlist</a>
-          <a class="card-nav-link" href="real-estate-account-reviews.html">
+          <a class="card-nav-link" href="#">
             <i class="fa-solid fa-star opacity-60 me-2"></i>Reviews</a>
-          <a class="card-nav-link" href="real-estate-account-notifications.html">
+          <a class="card-nav-link" href="#">
             <i class="fa-solid fa-bell opacity-60 me-2"></i>Notifications</a>
-          <a class="card-nav-link" href="real-estate-help-center.html">
+          <a class="card-nav-link" href="#">
             <i class="fa-solid fa-circle-question opacity-60 me-2"></i>Help</a>
-          <a class="card-nav-link" href="signin-light.html">
+          <a class="card-nav-link" href="#">
             <i class="fa-solid fa-right-from-bracket opacity-60 me-2"></i>Sign Out</a>
           </div>
         </div>
@@ -53,11 +53,16 @@
     <!-- Content-->
     <div class="col-lg-8 col-md-7 mb-5">
       <div class="d-flex align-items-center justify-content-between mb-4">
-        <h1 class="h2 mb-0">Your Wishlist</h1><a class="fw-bold text-decoration-none" href="#"><i class="fa-solid fa-xmark fs-xs mt-n1 me-2"></i>Clear all</a>
+        <h1 class="h2 mb-0">Your Favourites</h1>
+        <% if current_user.favorite_listings.exists? %>
+          <%= link_to clear_all_path, class:"fw-bold text-decoration-none", method: :get  do %>
+          <i class="fa-solid fa-xmark me-2"></i>Clear all</a>
+          <% end %>
+        <% end %>
       </div>
       <!-- Item-->
       <% if @favorites.empty? %>
-        <p>Nothing added yet, listings liked in results will appear here.</p>
+        <p>Nothing added yet. Listings liked in results will appear here.</p>
       <% else %>
 
       <% @favorites.each do |favorite| %>
